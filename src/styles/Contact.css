@@ -1,0 +1,20 @@
+@import url("index.css");
+
+#contact {
+    display: flex;
+    flex-direction: row;
+    div {
+        align-content: center;
+    }
+    .left-pane {
+        flex: 40%;
+        .social-links {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .right-pane {
+        flex: 60%;
+    }
+    min-height: 30rem;
+}

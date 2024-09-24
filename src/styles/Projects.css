@@ -1,0 +1,17 @@
+@import url("index.css");
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    div {
+        align-content: center;
+    }
+    .top-pane {
+        min-height: 5rem;
+    }
+    .bottom-pane {
+        min-height: 40rem;
+        border: 1px solid var(--opposite-clr);
+        border-radius: 22px;
+    }
+}

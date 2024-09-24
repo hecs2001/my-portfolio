@@ -1,21 +1,29 @@
-import React from "react";
-import { Stack, IconButton } from '@mui/material';
-import viteImage from "../assets/vite.svg";
+import { LinkButton } from "./Button";
+import viteLogo from "../assets/vite.svg";
 import reactLogo from "../assets/react.svg";
-import muiLogo from "../assets/mui.svg";
+import "../styles/components.css";
 
 export default function Footer() {
-    return (
-        <div className="footer">
-            <Stack direction="row" spacing={1}>
-                <IconButton href="https://vitejs.dev" target="_blank" rel="noopener noreferrer"><img src={viteImage}/></IconButton>
-                <IconButton href="https://react.dev" target="_blank" rel="noopener noreferrer"><img src={reactLogo}/></IconButton>
-                <IconButton href="https://mui.com/" target="_blank" rel="noopener noreferrer"><img src={muiLogo}/></IconButton>
-            </Stack>
-            <div className="footer-text">
-                <p>Hecs &copy; {new Date().getFullYear()}</p>
-                <p>All Rights Reserved</p>
-            </div>
-        </div>
-    )
+  return (
+    <div className="footer">
+      <div>
+        <LinkButton
+          type="image"
+          link="https://www.vitejs.dev"
+          icon={viteLogo}
+          text="Vite Logo"
+        />
+        <LinkButton
+          type="image"
+          link="https://www.react.dev"
+          icon={reactLogo}
+          text="React Logo"
+        />
+      </div>
+      <div style={{ textAlign: "right" }}>
+        <p>Hecs &copy; {new Date().getFullYear()}</p>
+        <p>All Rights Reserved</p>
+      </div>
+    </div>
+  );
 }

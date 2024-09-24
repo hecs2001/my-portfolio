@@ -1,19 +1,20 @@
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import "./index.css";
-import "./components/components.css"
+import "./styles/index.css";
 
-import NavBar from "./components/NavBar";
-import * as Main from "./pages/MainPage.jsx";
+import Navigation from "./components/Navigation";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import { Projects } from "./pages/Projects";
+import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 
 export default function App() {
   return (
     <>
-      <NavBar />
-      <Main.Home />
-      <Main.About />
-      <Main.Projects />
-      <Main.Contact />
+      <Navigation />
+      <Home />
+      <About />
+      <Projects />
+      <Contact />
       <Footer />
     </>
   );

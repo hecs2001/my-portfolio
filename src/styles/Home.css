@@ -1,0 +1,8 @@
+@import url("index.css");
+
+#home {
+    h2 {
+        font-family: var(--mono-font);
+        font-weight: 400;
+    }
+}

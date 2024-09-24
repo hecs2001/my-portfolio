@@ -1,0 +1,44 @@
+:root {
+  --sans-font: "Nunito", sans-serif;
+  --mono-font: "Fira Code", monospace;
+
+  color-scheme: dark, light;
+  background-color: var(--base-clr);
+  color: var(--font-clr);
+
+  font-family: var(--sans-font);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --base-clr: #181818;
+    --opposite-clr: #ede9e8;
+    --card-clr: #333333;
+    --font-clr: #f3f2ed;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --base-clr: #ede9e8;
+    --opposite-clr: #181818;
+    --card-clr: #fbfcf8;
+    --font-clr: #121212;
+  }
+}
+
+* {
+  margin: 0%;
+  .container {
+    text-align: center;
+    align-content: center;
+    margin: 4rem auto;
+    max-width: 60rem;
+    .right-pane {
+      border: 1px solid var(--opposite-clr);
+      border-radius: 22px;
+    }
+  }
+}

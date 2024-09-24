@@ -1,0 +1,48 @@
+@import url("index.css");
+
+#about.container {
+  display: flex;
+  flex-direction: row;
+  div {
+    align-content: center;
+  }
+  .left-pane {
+    flex: 35%;
+    img {
+      border: 1px solid var(--opposite-clr);
+      border-radius: 50%;
+      width: 175px;
+      height: 175px;
+    }
+    img:not( :hover ){
+      filter: grayscale(100%);
+      transition: all 500ms;
+    }
+    img:hover {
+      filter: grayscale(0%);
+      transition: all 500ms;
+    }
+  }
+  .right-pane {
+    flex: 65%;
+    div {
+      margin: 1.8rem;
+      text-align: left;
+      h3,
+      h4,
+      h5 {
+        font-family: var(--mono-font);
+        margin: 0.4rem;
+      }
+      h4,
+      h5 {
+        font-weight: 300;
+      }
+    }
+  }
+}
+.progress-element {
+  label {
+    font-family: var(--mono-font);
+  }
+}
