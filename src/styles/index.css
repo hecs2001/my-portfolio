@@ -29,16 +29,57 @@
   }
 }
 
-* {
+body {
   margin: 0%;
   .container {
     text-align: center;
     align-content: center;
     margin: 4rem auto;
     max-width: 60rem;
-    .right-pane {
-      border: 1px solid var(--opposite-clr);
-      border-radius: 22px;
+    div {
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+    }
+    .left-pane, .top-pane {
+      display: flex;
+      flex-direction: column;
+    }
+    .right-pane, .bottom-pane {
+      border-radius: 24px;
+      margin: 1.2rem;
+      padding: 2.2rem;
+    }
+    h1, h2, h3 {
+      width: fit-content;
     }
   }
 }
+
+.glass {
+  border-radius: 32px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  @media (prefers-color-scheme: dark) {
+    background: rgba(51, 51, 51, 0.3);
+    box-shadow: 0 3px 10px rgb(24, 24, 24);
+  }
+  @media (prefers-color-scheme: light) {
+    background: rgba(251, 252, 248, 0.3);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* DEBUGGING 
+.container {
+  border: 0.5px dashed red;
+}
+div, form {
+  border: 0.5px dashed green;
+}
+h1, h2, h3, h4, h5, h6, p, label {
+  border: 0.5px dashed yellow;
+}
+img, button, input, progress {
+  border: 0.5px dashed blue;
+} */

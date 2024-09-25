@@ -27,7 +27,6 @@ export function LinkButton(props) {
   }
   return (
     <button
-      key={props.key}
       className={
         "button " +
         (props.type === "image"

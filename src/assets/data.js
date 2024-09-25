@@ -5,21 +5,15 @@ const introduction = {
 const education = [
   {
     id: 0,
+    level: "Bachelor's Degree",
     course: "Bachelor of Science in Computer Science",
     school: "De La Salle University - Dasmariñas",
-    year: {
-      start: 2019,
-      end: null,
-    },
   },
   {
     id: 1,
+    level: "Senior High School",
     course: "Information Communication and Technology",
     school: "Lyceum of the Philippines University - Cavite",
-    year: {
-      start: 2017,
-      end: 2019,
-    },
   },
 ];
 

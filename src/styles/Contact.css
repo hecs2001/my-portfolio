@@ -1,20 +1,24 @@
 @import url("index.css");
 
 #contact {
-    display: flex;
-    flex-direction: row;
-    div {
-        align-content: center;
+  display: flex;
+  flex-direction: row;
+  .left-pane {
+    flex: 45%;
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      button {
+        margin: 0.4rem;
+      }
     }
-    .left-pane {
-        flex: 40%;
-        .social-links {
-            display: flex;
-            flex-direction: column;
-        }
-    }
-    .right-pane {
-        flex: 60%;
-    }
-    min-height: 30rem;
+  }
+  .right-pane {
+    flex: 55%;
+  }
+  min-height: 25rem;
+}
+
+.input-box {
+  background: transparent;
 }

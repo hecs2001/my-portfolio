@@ -3,46 +3,74 @@
 #about.container {
   display: flex;
   flex-direction: row;
-  div {
-    align-content: center;
-  }
   .left-pane {
-    flex: 35%;
+    flex: 40%;
     img {
-      border: 1px solid var(--opposite-clr);
       border-radius: 50%;
       width: 175px;
       height: 175px;
     }
-    img:not( :hover ){
-      filter: grayscale(100%);
+    img:not(:hover) {
+      filter: saturate(0%);
       transition: all 500ms;
     }
     img:hover {
-      filter: grayscale(0%);
+      filter: saturate(100%);
       transition: all 500ms;
     }
   }
   .right-pane {
-    flex: 65%;
+    flex: 60%;
     div {
-      margin: 1.8rem;
       text-align: left;
+      h2 {
+        margin-top: 2rem;
+        margin-bottom: 0rem;
+      }
       h3,
       h4,
-      h5 {
+      h5,
+      label {
         font-family: var(--mono-font);
-        margin: 0.4rem;
+        margin: 0.2rem;
       }
       h4,
       h5 {
         font-weight: 300;
       }
+      li {
+        margin: 0.6rem;
+        margin-bottom: 1rem;
+      }
     }
   }
 }
-.progress-element {
-  label {
-    font-family: var(--mono-font);
+
+.skills-content {
+  display: grid;
+  justify-content: space-evenly;
+  grid-template-columns: auto auto;
+  gap: 0.2rem;
+  h2 {
+    text-align: center;
+    grid-column: 1 / span 2;
+    height: fit-content;
+  }
+  .progress-element {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    height: fit-content;
+    margin: 0.6rem;
+    progress {
+      background: transparent;
+      color: var(--font-clr);
+      border-radius: 8px;
+      margin-left: 0.4rem;
+      width: 50%;
+    }
+    ::-moz-progress-bar, ::-webkit-progress-value {
+      background: var(--font-clr);
+    }
   }
 }

@@ -7,11 +7,10 @@
         align-content: center;
     }
     .top-pane {
-        min-height: 5rem;
+        height: fit-content;
     }
     .bottom-pane {
-        min-height: 40rem;
-        border: 1px solid var(--opposite-clr);
+        min-height: 25rem;
         border-radius: 22px;
     }
 }
