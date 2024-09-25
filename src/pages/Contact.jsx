@@ -13,12 +13,6 @@ export default function Contact() {
     alert("Hello");
   }
 
-  function InputBox(props) {
-    return (
-      <input className={"input-box "} type="text" />
-    )
-  }
-
   return (
     <div id="contact" className="container glass">
       <div className="left-pane">
@@ -33,10 +27,11 @@ export default function Contact() {
       </div>
       <div className="right-pane glass">
         <form onSubmit={handleSubmit}>
-          <InputBox box="normal" />
-          <InputBox box="normal" />
-          <InputBox box="expanded" />
-          <button type="submit" />
+          <input className="input-box" type="text" placeholder="Name" />
+          <input className="input-box" type="text" placeholder="Email" />
+          <textarea className="input-box" rows={4} placeholder="Message" />
+          <label>0 words</label>
+          <button className="button norm-button" type="submit">Submit</button>
         </form>
       </div>
     </div>

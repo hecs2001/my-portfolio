@@ -20,7 +20,7 @@ export default function Footer() {
           text="React Logo"
         />
       </div>
-      <div style={{ textAlign: "right" }}>
+      <div className="footer-text">
         <p>Hecs &copy; {new Date().getFullYear()}</p>
         <p>All Rights Reserved</p>
       </div>

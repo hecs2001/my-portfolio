@@ -14,18 +14,16 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --base-clr: #181818;
-    --opposite-clr: #ede9e8;
-    --card-clr: #333333;
-    --font-clr: #f3f2ed;
+    --base-clr: rgb(24, 24, 24);
+    --opposite-clr: rgb(237, 233, 232);
+    --font-clr: rgb(243, 242, 237);
   }
 }
 @media (prefers-color-scheme: light) {
   :root {
-    --base-clr: #ede9e8;
-    --opposite-clr: #181818;
-    --card-clr: #fbfcf8;
-    --font-clr: #121212;
+    --base-clr: rgb(237, 233, 232);
+    --opposite-clr: rgb(24, 24, 24);
+    --font-clr: rgb(18, 18, 18);
   }
 }
 
@@ -62,24 +60,10 @@ body {
   -webkit-backdrop-filter: blur(10px);
   @media (prefers-color-scheme: dark) {
     background: rgba(51, 51, 51, 0.3);
-    box-shadow: 0 3px 10px rgb(24, 24, 24);
+    box-shadow: 0 3px 10px 2px rgb(24, 24, 24);
   }
   @media (prefers-color-scheme: light) {
     background: rgba(251, 252, 248, 0.3);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.3);
   }
 }
-
-/* DEBUGGING 
-.container {
-  border: 0.5px dashed red;
-}
-div, form {
-  border: 0.5px dashed green;
-}
-h1, h2, h3, h4, h5, h6, p, label {
-  border: 0.5px dashed yellow;
-}
-img, button, input, progress {
-  border: 0.5px dashed blue;
-} */

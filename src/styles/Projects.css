@@ -1,16 +1,14 @@
 @import url("index.css");
 
 #projects {
-    display: flex;
-    flex-direction: column;
-    div {
-        align-content: center;
-    }
-    .top-pane {
-        height: fit-content;
-    }
-    .bottom-pane {
-        min-height: 25rem;
-        border-radius: 22px;
-    }
+  display: flex;
+  flex-direction: column;
+  div {
+    align-content: center;
+  }
+  .bottom-pane {
+    margin-top: 0%;
+    min-height: 25rem;
+    border-radius: 22px;
+  }
 }

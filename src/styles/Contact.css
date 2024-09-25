@@ -15,10 +15,39 @@
   }
   .right-pane {
     flex: 55%;
+    form {
+      display: flex;
+      flex-direction: column;
+      .input-box, label {
+        font-family: var(--mono-font);
+        font-weight: 300;
+      }
+      label {
+        align-self: flex-start;
+        font-size: 0.8rem;
+      }
+      .input-box {
+        background: transparent;
+        border-radius: 12px;
+        color: var(--font-clr);
+        font-size: 1rem;
+        resize: none;
+        margin: 0.75rem 0;
+        padding: 0.4rem 0.8rem;
+      }
+      .input-box:not(:focus-visible) {
+        border: 1px solid var(--font-clr);
+        transition: all, 800ms;
+      }
+      .input-box:focus-visible {
+        border: 1px solid red;
+        outline: 1px solid red;
+        box-shadow: 0 0 4px 1px red;
+        transition: all, 400ms;
+      }
+      button {
+        align-self: flex-end;
+      }
+    }
   }
-  min-height: 25rem;
-}
-
-.input-box {
-  background: transparent;
 }

@@ -6,6 +6,12 @@
   justify-content: space-around;
   align-items: center;
   min-height: 12rem;
+  .footer-text {
+    text-align: right;
+    p {
+      margin: 0%;
+    }
+  }
 }
 
 .button {
@@ -17,35 +23,34 @@
 }
 
 .norm-button {
-  border: 1px solid var(--font-clr);
+  border-radius: 12px;
+  font-size: 1rem;
+  padding: 0.4rem 1.2rem;
   font-weight: 700;
 }
 .norm-button:not(:hover) {
-  border-radius: 14px;
+  border: 0.5px solid var(--font-clr);
   background-color: transparent;
   color: var(--font-clr);
-  font-size: 1rem;
-  padding: 0.4rem 1.2rem;
-  transition: all, 500ms;
+  transition: all, 800ms;
 }
 .norm-button:hover {
-  border-radius: 18px;
+  border: 1px solid var(--font-clr);
+  box-shadow: 0 0 4px 1px var(--font-clr);
   background-color: var(--font-clr);
   color: var(--base-clr);
-  font-size: 1.2rem;
-  padding: 0.6rem 1.4rem;
-  transition: all, 500ms;
+  transition: all, 400ms;
 }
 
 .img-button {
   border: transparent;
   :not(:hover) {
     filter: saturate(0%);
-    transition: all, 1500ms;
+    transition: all, 1400ms;
   }
   :hover {
     filter: saturate(100%);
-    transition: all, 1500ms;
+    transition: all, 600ms;
   }
 }
 
