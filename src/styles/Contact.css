@@ -1,4 +1,4 @@
-@import url("index.css");
+@import url("App.css");
 
 #contact {
   display: flex;
@@ -7,9 +7,14 @@
     flex: 45%;
     .social-links {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       button {
+        border: transparent;
         margin: 0.4rem;
+        svg {
+          width: 2rem;
+          height: 2rem;
+        }
       }
     }
   }
@@ -18,36 +23,49 @@
     form {
       display: flex;
       flex-direction: column;
-      .input-box, label {
+      textarea, input {
         font-family: var(--mono-font);
         font-weight: 300;
       }
-      label {
-        align-self: flex-start;
-        font-size: 0.8rem;
-      }
-      .input-box {
-        background: transparent;
-        border-radius: 12px;
-        color: var(--font-clr);
-        font-size: 1rem;
-        resize: none;
-        margin: 0.75rem 0;
-        padding: 0.4rem 0.8rem;
-      }
-      .input-box:not(:focus-visible) {
-        border: 1px solid var(--font-clr);
-        transition: all, 800ms;
-      }
-      .input-box:focus-visible {
-        border: 1px solid red;
-        outline: 1px solid red;
-        box-shadow: 0 0 4px 1px red;
-        transition: all, 400ms;
-      }
       button {
         align-self: flex-end;
+        border: 1px solid var(--font-color);
+        padding: 0.4rem 1.2rem;
       }
     }
   }
+}
+
+.input-box {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--font-color);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  padding: 0.6rem;
+  svg {
+    pointer-events: none;
+    margin: auto 0.4rem auto auto;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  textarea, input {
+    border: transparent;
+    background: transparent;
+    color: var(--font-color);
+    font-size: 1rem;
+    resize: none;
+    width: 100%;
+  }
+  *:focus {
+    outline: none;
+  }
+}
+.input-box:not(:focus-within) {
+  transition: all, 800ms;
+}
+.input-box:focus-within {
+  outline: 1px solid var(--font-color);
+  box-shadow: 0 0 4px 1px var(--font-color);
+  transition: all, 400ms;
 }

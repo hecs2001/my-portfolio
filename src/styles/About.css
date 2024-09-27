@@ -1,4 +1,4 @@
-@import url("index.css");
+@import url("App.css");
 
 #about.container {
   display: flex;
@@ -18,13 +18,22 @@
       filter: saturate(100%);
       transition: all 500ms;
     }
+    button {
+      border: 1px solid var(--font-color);
+      padding: 0.4rem 1.2rem;
+      svg {
+        margin: auto 0.2rem;
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
   }
   .right-pane {
     flex: 60%;
     div {
       text-align: left;
       h2 {
-        margin-top: 2rem;
+        margin-top: 1.8rem;
         margin-bottom: 0rem;
       }
       h3,
@@ -38,7 +47,7 @@
       h5 {
         font-weight: 300;
       }
-      li {
+      div {
         margin: 0.6rem;
         margin-bottom: 1rem;
       }
@@ -64,13 +73,13 @@
     margin: 0.6rem;
     progress {
       background: transparent;
-      color: var(--font-clr);
+      color: var(--font-color);
       border-radius: 8px;
       margin-left: 0.4rem;
       width: 50%;
     }
     ::-moz-progress-bar, ::-webkit-progress-value {
-      background: var(--font-clr);
+      background: var(--font-color);
     }
   }
 }
