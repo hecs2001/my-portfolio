@@ -24,7 +24,7 @@ function NavigationBar() {
         <NavigationButton name="projects" offset={-100} icon={<ProjectsIcon />}/>
         <NavigationButton name="contact" icon={<ContactIcon />}/>
       </div>
-      <button className="button" onClick={switchTheme}><MoonIcon /></button>
+      <button className="button" onClick={switchTheme}>{<MoonIcon />}</button>
     </div>
   )
 }

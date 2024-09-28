@@ -9,7 +9,7 @@ export default function Footer() {
         <button className="button" onClick={() => {window.open("https://www.react.dev", "_blank")}}><ReactIcon /></button>
       </div>
       <div className="footer-text">
-        <p>Hecs &copy; {new Date().getFullYear()}</p>
+        <p>&copy; {new Date().getFullYear()} Hector Liam Valdez</p>
         <p>All Rights Reserved</p>
       </div>
     </div>

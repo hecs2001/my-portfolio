@@ -36,10 +36,10 @@ const workExperience = [
 const devSkills = [
   { id: 0, skill: "HTML5", progress: 90 },
   { id: 1, skill: "CSS3", progress: 85 },
-  { id: 2, skill: "JavaScript", progress: 68 },
-  { id: 3, skill: "React JS", progress: 40 },
+  { id: 2, skill: "JavaScript ES6", progress: 68 },
+  { id: 3, skill: "React JS", progress: 45 },
   { id: 4, skill: "Python", progress: 65 },
-  { id: 5, skill: "Django", progress: 10 },
+  { id: 5, skill: "SQL", progress: 30 },
 ];
 
 const socialLinks = [

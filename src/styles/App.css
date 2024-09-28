@@ -152,7 +152,7 @@ body {
 }
 
 /* DEBUGGING */
-/* */
+/* 
 .container {
   border: 0.5px dashed red;
 }
@@ -164,4 +164,4 @@ h1, h2, h3, h4, h5, h6, p, label {
 }
 img, svg, button, input, progress {
   border: 0.5px dashed blue;
-} 
+} */

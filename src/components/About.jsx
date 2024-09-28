@@ -64,8 +64,10 @@ export default function About() {
                   <h3>{title}</h3>
                   <h4>{company}</h4>
                   <h5>
-                    {nameMonth(startMonth)} {startYear} - {nameMonth(endMonth)}{" "}
-                    {endYear}
+                    {nameMonth(startMonth)} {startYear} -{" "}
+                    {endMonth === null && endYear === null
+                      ? "Present"
+                      : nameMonth(endMonth) + " " + endYear}
                   </h5>
                 </div>
               );
@@ -74,15 +76,20 @@ export default function About() {
         </div>
         <div className="skills-content">
           <h2>Technical Skills</h2>
-          {devSkills.map(({id, skill, progress}) => {
+          {devSkills.map(({ id, skill, progress }) => {
+            const progressStyle = { "--width": progress + "%" };
             return (
               <div key={id} className="progress-element">
-                <p className="progress-label" progress={progress + "%"}>{skill}</p>
-                <div className="progress-container" progress={progress + "%"}>
-                  <progress max={100} value={progress}>{progress}</progress>
+                <p className="progress-label" progress={progress + "%"}>
+                  {skill}
+                </p>
+                <div className="progress-container" style={progressStyle}>
+                  <progress max={100} value={progress}>
+                    {progress}
+                  </progress>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
       </div>
