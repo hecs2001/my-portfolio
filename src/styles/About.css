@@ -66,19 +66,35 @@
     height: fit-content;
   }
   .progress-element {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    height: fit-content;
-    margin: 0.6rem;
-    progress {
-      background: transparent;
-      color: var(--font-color);
-      border-radius: 8px;
-      margin-left: 0.4rem;
-      width: 50%;
+    font-family: var(--mono-font);
+    .progress-label {
+      position: relative;
     }
-    ::-moz-progress-bar, ::-webkit-progress-value {
+    .progress-label::after {
+      content: attr(progress);
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .progress-container {
+      position: relative;
+      display: inline-block;
+      background: var(--base-color);
+      width: fit-content;
+      height: 1rem;
+      border-radius: 6px;
+      overflow: hidden;
+      progress {
+        opacity: 0;
+      }
+    }
+    .progress-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 50%;
       background: var(--font-color);
     }
   }

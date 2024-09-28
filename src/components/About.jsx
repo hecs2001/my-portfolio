@@ -74,15 +74,15 @@ export default function About() {
         </div>
         <div className="skills-content">
           <h2>Technical Skills</h2>
-          {devSkills.map(({ id, skill, progress }) => {
+          {devSkills.map(({id, skill, progress}) => {
             return (
               <div key={id} className="progress-element">
-                <label>{skill}</label>
-                <progress value={progress} max={100}>
-                  {progress}%
-                </progress>
+                <p className="progress-label" progress={progress + "%"}>{skill}</p>
+                <div className="progress-container" progress={progress + "%"}>
+                  <progress max={100} value={progress}>{progress}</progress>
+                </div>
               </div>
-            );
+            )
           })}
         </div>
       </div>

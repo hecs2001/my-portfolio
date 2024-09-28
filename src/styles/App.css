@@ -29,28 +29,6 @@
 
 body {
   margin: 0%;
-  #navigation-bar {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    top: 50%;
-    left: 1.5rem;
-    transform: translateY(-50%);
-    z-index: 2;
-    svg {
-      cursor: pointer;
-      margin: 0.8rem 0.2rem;
-      width: 2rem;
-      height: 2rem;
-    }
-    svg:not(:hover) {
-      transition: all, 800ms;
-    }
-    svg:hover {
-      transition: all, 400ms;
-    }
-  }
   .container {
     text-align: center;
     align-content: center;
@@ -126,6 +104,35 @@ body {
   }
 }
 
+#navigation-bar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  border-radius: 36px;
+  padding: 0.6rem;
+  align-items: center;
+  top: 50%;
+  left: 1.5rem;
+  transform: translateY(-50%);
+  z-index: 2;
+  div {
+    display: flex;
+    flex-direction: column;
+    border-radius: 28px;
+    margin-bottom: 0.5rem;
+    padding: 0.6rem;
+  }
+  svg {
+    cursor: pointer;
+    margin: 0.8rem 0.2rem;
+    width: 2rem;
+    height: 2rem;
+  }
+  button {
+    border: transparent;
+  }
+}
+
 .button {
   border-radius: 12px;
   background: transparent;
@@ -145,7 +152,7 @@ body {
 }
 
 /* DEBUGGING */
-/* 
+/* */
 .container {
   border: 0.5px dashed red;
 }
@@ -157,4 +164,4 @@ h1, h2, h3, h4, h5, h6, p, label {
 }
 img, svg, button, input, progress {
   border: 0.5px dashed blue;
-} */
+} 

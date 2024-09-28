@@ -4,7 +4,7 @@ import "../styles/Contact.css";
 import {
   LinkedInIcon,
   GitHubIcon,
-  InstagramIcon,
+  BehanceIcon,
   LinkIcon,
   PersonIcon,
   EmailIcon,
@@ -17,8 +17,8 @@ function SocialButton({ social, link}) {
         return <LinkedInIcon />
       case "GitHub":
         return <GitHubIcon />
-      case "Instagram":
-        return <InstagramIcon />
+      case "Behance":
+        return <BehanceIcon />
       default:
         return <LinkIcon />
     }

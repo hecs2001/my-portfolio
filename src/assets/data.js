@@ -45,7 +45,7 @@ const devSkills = [
 const socialLinks = [
   { id: 0, social: "LinkedIn", link: "https://www.linkedin.com/in/hecs" },
   { id: 1, social: "GitHub", link: "https://github.com/hecs2001" },
-  { id: 2, social: "Instagram", link: "https://www.instagram.com/art.hecs/" },
+  { id: 2, social: "Behance", link: "https://www.behance.net/hecs" },
 ];
 
 export { introduction, education, workExperience, devSkills, socialLinks };

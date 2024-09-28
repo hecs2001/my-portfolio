@@ -1,5 +1,6 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
-import { HomeIcon, AboutIcon, ProjectsIcon, ContactIcon } from "./assets/Icons";
+import { HomeIcon, AboutIcon, ProjectsIcon, ContactIcon, MoonIcon, SunIcon } from "./assets/Icons";
 import "./styles/App.css";
 
 import Home from "./components/Home";
@@ -14,12 +15,16 @@ function NavigationBar() {
       <Link to={name} offset={!offset ? null : offset} smooth={true}>{icon}</Link>
     )
   }
+  function switchTheme() {}
   return (
     <div id="navigation-bar" className="glass">
-      <NavigationButton name="home" icon={<HomeIcon />}/>
-      <NavigationButton name="about" icon={<AboutIcon />}/>
-      <NavigationButton name="projects" offset={-100} icon={<ProjectsIcon />}/>
-      <NavigationButton name="contact" icon={<ContactIcon />}/>
+      <div className="glass">
+        <NavigationButton name="home" icon={<HomeIcon />}/>
+        <NavigationButton name="about" icon={<AboutIcon />}/>
+        <NavigationButton name="projects" offset={-100} icon={<ProjectsIcon />}/>
+        <NavigationButton name="contact" icon={<ContactIcon />}/>
+      </div>
+      <button className="button" onClick={switchTheme}><MoonIcon /></button>
     </div>
   )
 }
