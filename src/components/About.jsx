@@ -1,10 +1,11 @@
 import {
+  personalInfo,
   introduction,
   education,
   workExperience,
-  devSkills,
+  frontendSkills,
+  backendSkills
 } from "../assets/data";
-import { LinkIcon } from "../assets/Icons";
 import selfPortrait from "../assets/me.jpg";
 import "../styles/About.css";
 
@@ -15,13 +16,29 @@ export default function About() {
     return date.toLocaleString("en-EN", { month: "long" });
   }
 
+  function SkillDisplay({ skill, progress }) {
+    const progressStyle = { "--width": progress + "%" };
+    return (
+      <div className="progress-element skill">
+        <p className="progress-label" progress={progress + "%"}>
+          {skill}
+        </p>
+        <div className="progress-container" style={progressStyle}>
+          <progress max={100} value={progress}>
+            {progress}
+          </progress>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div id="about" className="container glass">
       <div className="left-pane">
         <img src={selfPortrait} alt="Picture of Hecs" />
         <h1>About</h1>
         <button
-          className="button"
+          className="button text-button"
           onClick={() => {
             window.open(
               "https://www.canva.com/design/DAGN1tAikM0/sJnAIXeHK194zLqa3lxhSQ/edit?utm_content=DAGN1tAikM0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
@@ -29,25 +46,39 @@ export default function About() {
             );
           }}
         >
-          Resume
-          <LinkIcon />
+          Open Resume
         </button>
+        <div className="personal-info glass">
+          {personalInfo.map(({ id, title, content }) => {
+            return (
+              <span key={id}>
+                <h6>{title}</h6>
+                <h4 style={{fontWeight: "600"}}>
+                  {title === "Email" ? (
+                    <a href={"mailto:" + content}>{content}</a>
+                  ) : (
+                    content
+                  )}
+                </h4>
+              </span>
+            );
+          })}
+        </div>
+        <div className="education-info glass">
+          {education.map(({ id, level, course, school }) => {
+            return (
+              <span key={id}>
+                <h6>{level}</h6>
+                <h3>{course}</h3>
+                <h4>{school}</h4>
+              </span>
+            );
+          })}
+        </div>
       </div>
       <div className="right-pane glass">
         <div>
           <h4>{introduction.text}</h4>
-        </div>
-        <div>
-          <h2>Education</h2>
-          {education.map(({ id, level, course, school }) => {
-            return (
-              <div key={id}>
-                <h5>{level}</h5>
-                <h3>{course}</h3>
-                <h4>{school}</h4>
-              </div>
-            );
-          })}
         </div>
         <div>
           <h2>Experience</h2>
@@ -75,21 +106,15 @@ export default function About() {
           )}
         </div>
         <div className="skills-content">
-          <h2>Technical Skills</h2>
-          {devSkills.map(({ id, skill, progress }) => {
-            const progressStyle = { "--width": progress + "%" };
-            return (
-              <div key={id} className="progress-element">
-                <p className="progress-label" progress={progress + "%"}>
-                  {skill}
-                </p>
-                <div className="progress-container" style={progressStyle}>
-                  <progress max={100} value={progress}>
-                    {progress}
-                  </progress>
-                </div>
-              </div>
-            );
+          <h2>Skills: Front-end</h2>
+          {frontendSkills.map(({ id, skill, progress }) => {
+            return <SkillDisplay key={id} skill={skill} progress={progress} />;
+          })}
+        </div>
+        <div className="skills-content">
+          <h2>Skills: Back-end</h2>
+          {backendSkills.map(({ id, skill, progress }) => {
+            return <SkillDisplay key={id} skill={skill} progress={progress} />;
           })}
         </div>
       </div>

@@ -38,21 +38,31 @@ body {
       align-content: center;
       justify-content: center;
     }
-    .left-pane, .top-pane {
+    .left-pane,
+    .top-pane {
       display: flex;
       flex-direction: column;
     }
-    .right-pane, .bottom-pane {
+    .right-pane,
+    .bottom-pane {
       border-radius: 24px;
       margin: 1.2rem;
       padding: 2.2rem;
     }
-    h1, h2, h3 {
+    .right-pane {
+      margin-left: 0rem;
+    }
+    h1,
+    h2,
+    h3:not(.project-title) {
       width: fit-content;
     }
   }
-  .container:not(#contact) {
-    max-width: 60rem;
+  #about {
+    max-width: 65rem;
+  }
+  #projects {
+    max-width: 58rem;
   }
   #contact {
     max-width: 50rem;
@@ -74,14 +84,6 @@ body {
       svg {
         width: 2.8rem;
         height: 2.8rem;
-      }
-      svg:not(:hover) {
-        filter: saturate(0%);
-        transition: filter, 800ms;
-      }
-      svg:hover {
-        filter: saturate(100%);
-        transition: filter, 600ms;
       }
     }
     .footer-text {
@@ -122,14 +124,36 @@ body {
     margin-bottom: 0.5rem;
     padding: 0.6rem;
   }
+  .toggle-icons,
   svg {
-    cursor: pointer;
-    margin: 0.8rem 0.2rem;
     width: 2rem;
     height: 2rem;
   }
-  button {
-    border: transparent;
+  .toggle-icons {
+    display: block;
+    position: relative;
+    margin: 0.8rem 0.2rem;
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: opacity 200ms ease-in;
+    }
+  }
+  .toggle-icons .icon-default {
+    opacity: 1;
+  }
+  .toggle-icons:hover .icon-default,
+  .toggle-icons:hover .icon-default {
+    opacity: 0;
+  }
+  .toggle-icons .icon-hover {
+    opacity: 0;
+  }
+  .toggle-icons:hover .icon-hover,
+  .toggle-icons:focus .icon-hover {
+    opacity: 1;
   }
 }
 
@@ -143,6 +167,14 @@ body {
   cursor: pointer;
   width: fit-content;
 }
+.text-button:enabled:not(:hover) {
+  transition: background-color 500ms, color 500ms;
+}
+.text-button:enabled:hover {
+  background-color: var(--font-color);
+  color: var(--base-color);
+  transition: background-color 500ms, color 500ms;
+}
 
 /* MOBILE SIZE */
 @media screen and (max-width: 1250px) {
@@ -150,18 +182,3 @@ body {
     left: 2rem;
   }
 }
-
-/* DEBUGGING */
-/* 
-.container {
-  border: 0.5px dashed red;
-}
-div, form {
-  border: 0.5px dashed green;
-}
-h1, h2, h3, h4, h5, h6, p, label {
-  border: 0.5px dashed yellow;
-}
-img, svg, button, input, progress {
-  border: 0.5px dashed blue;
-} */

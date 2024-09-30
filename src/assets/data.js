@@ -1,5 +1,24 @@
+const personalInfo = [
+  {
+    id: 0,
+    title: "Name",
+    content: "Hector Liam T. Valdez",
+  },
+  {
+    id: 1,
+    title: "Email",
+    content: "liam.valdez@protonmail.com",
+  },
+  {
+    id: 2,
+    title: "Location",
+    content: "Imus City, Cavite 4103",
+  },
+];
+
 const introduction = {
-  text: "Lorem ipsum odor amet, consectetuer adipiscing elit. Fermentum eu dignissim; mus quis interdum magnis sociosqu ligula. Congue curabitur velit eleifend dignissim gravida nisl gravida. Nascetur facilisis orci class magna vitae platea non. Class erat tellus felis, erat diam fermentum id. Euismod laoreet ligula ultricies risus ridiculus.",
+  text:
+    "I'm a aspiring full-stack web developer and a game developer graduate that possesses strong attention to detail. My game development background also equipped me with a solid understanding of programming principles, problem-solving, and user experience design. I am now applying these skills to become a full-stack web developer, specializing in Python, React JS, Node.js, and Django. In addition to that, I'm a big fan of clean, minimalist aesthetics.",
 };
 
 const education = [
@@ -33,14 +52,20 @@ const workExperience = [
   },
 ];
 
-const devSkills = [
+const frontendSkills = [
   { id: 0, skill: "HTML5", progress: 90 },
   { id: 1, skill: "CSS3", progress: 85 },
   { id: 2, skill: "JavaScript ES6", progress: 68 },
   { id: 3, skill: "React JS", progress: 45 },
-  { id: 4, skill: "Python", progress: 65 },
-  { id: 5, skill: "SQL", progress: 30 },
 ];
+
+const backendSkills = [
+  { id: 0, skill: "Python", progress: 65 },
+  { id: 1, skill: "Django", progress: 10 },
+  { id: 2, skill: "MySQL", progress: 30 },
+];
+
+const projects = [];
 
 const socialLinks = [
   { id: 0, social: "LinkedIn", link: "https://www.linkedin.com/in/hecs" },
@@ -48,4 +73,13 @@ const socialLinks = [
   { id: 2, social: "Behance", link: "https://www.behance.net/hecs" },
 ];
 
-export { introduction, education, workExperience, devSkills, socialLinks };
+export {
+  personalInfo,
+  introduction,
+  education,
+  workExperience,
+  frontendSkills,
+  backendSkills,
+  projects,
+  socialLinks,
+};

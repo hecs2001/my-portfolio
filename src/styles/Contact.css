@@ -23,14 +23,29 @@
     form {
       display: flex;
       flex-direction: column;
-      textarea, input {
+      textarea,
+      input {
         font-family: var(--mono-font);
         font-weight: 300;
       }
-      button {
+      .send-button {
         align-self: flex-end;
-        border: 1px solid var(--font-color);
         padding: 0.4rem 1.2rem;
+        transition: background-color 600ms, color 400ms, border 400ms;
+      }
+      .send-button:disabled {
+        border: 1px solid var(--base-color);
+        color: var(--base-color);
+        cursor: not-allowed;
+      }
+      .send-button:enabled {
+        border: 1px solid var(--font-color);
+        color: var(--font-color);
+        cursor: pointer;
+      }
+      .send-button:enabled:hover {
+        background-color: var(--font-color);
+        color: var(--base-color);
       }
     }
   }
@@ -49,7 +64,8 @@
     width: 1.6rem;
     height: 1.6rem;
   }
-  textarea, input {
+  textarea,
+  input {
     border: transparent;
     background: transparent;
     color: var(--font-color);
@@ -61,11 +77,6 @@
     outline: none;
   }
 }
-.input-box:not(:focus-within) {
-  transition: all, 800ms;
-}
 .input-box:focus-within {
   outline: 1px solid var(--font-color);
-  box-shadow: 0 0 4px 1px var(--font-color);
-  transition: all, 400ms;
 }
