@@ -1,6 +1,7 @@
 :root {
   --sans-font: "Nunito", sans-serif;
   --mono-font: "Fira Code", monospace;
+  --accent-color: rgb(105, 96, 236);
 
   color-scheme: dark, light;
   background-color: var(--base-color);
@@ -15,14 +16,12 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --base-color: rgb(24, 24, 24);
-    --opposite-color: rgb(237, 233, 232);
     --font-color: rgb(243, 242, 237);
   }
 }
 @media (prefers-color-scheme: light) {
   :root {
     --base-color: rgb(237, 233, 232);
-    --opposite-color: rgb(24, 24, 24);
     --font-color: rgb(18, 18, 18);
   }
 }
@@ -62,7 +61,7 @@ body {
     max-width: 65rem;
   }
   #projects {
-    max-width: 58rem;
+    max-width: 60rem;
   }
   #contact {
     max-width: 50rem;
@@ -124,37 +123,19 @@ body {
     margin-bottom: 0.5rem;
     padding: 0.6rem;
   }
-  .toggle-icons,
   svg {
+    cursor: pointer;
     width: 2rem;
     height: 2rem;
+    margin: 0.75rem 0.1rem;
   }
-  .toggle-icons {
-    display: block;
-    position: relative;
-    margin: 0.8rem 0.2rem;
-    .icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      transition: opacity 200ms ease-in;
-    }
-  }
-  .toggle-icons .icon-default {
-    opacity: 1;
-  }
-  .toggle-icons:hover .icon-default,
-  .toggle-icons:hover .icon-default {
-    opacity: 0;
-  }
-  .toggle-icons .icon-hover {
-    opacity: 0;
-  }
-  .toggle-icons:hover .icon-hover,
-  .toggle-icons:focus .icon-hover {
-    opacity: 1;
-  }
+}
+
+svg {
+  transition: color 400ms;
+}
+svg:hover {
+  color: var(--accent-color);
 }
 
 .button {
@@ -167,13 +148,15 @@ body {
   cursor: pointer;
   width: fit-content;
 }
-.text-button:enabled:not(:hover) {
-  transition: background-color 500ms, color 500ms;
+.text-button {
+  border: 1px solid var(--font-color);
+  padding: 0.4rem 1.2rem;
+  transition: border 500ms, background-color 500ms, color 500ms;
 }
 .text-button:enabled:hover {
-  background-color: var(--font-color);
+  border: 1px solid var(--accent-color);
+  background-color: var(--accent-color);
   color: var(--base-color);
-  transition: background-color 500ms, color 500ms;
 }
 
 /* MOBILE SIZE */

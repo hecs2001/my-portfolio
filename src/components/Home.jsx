@@ -1,19 +1,32 @@
 import { useState, useEffect } from "react";
 import "../styles/Home.css";
 
-function Typewrite({text, delay}) {
+function Typewrite({ words, delay }) {
   const [currentText, setCurrentText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [textIndex, setTextIndex] = useState(0);
+  const [wordIndex, setWordIndex] = useState(0);
+  const currentWord = words[wordIndex];
 
   useEffect(() => {
-    if (currentIndex < text.length) {
-      const timeout = setTimeout(() => {
-        setCurrentText((prevText) => prevText + text[currentIndex]);
-        setCurrentIndex((prevIndex) => prevIndex + 1);
-      }, delay);
+    let timeout;
+    if (wordIndex < words.length) {
+      if (textIndex < currentWord.length) {
+        timeout = setTimeout(() => {
+          setCurrentText((prevText) => prevText + currentWord[textIndex]);
+          setTextIndex((prevIndex) => prevIndex + 1);
+        }, delay);
+      } else {
+        timeout = setTimeout(() => {
+          setCurrentText("");
+          setTextIndex(0);
+          setWordIndex((prevIndex) => prevIndex + 1);
+        }, (delay * currentWord.length));
+      }
       return () => clearTimeout(timeout);
+    } else {
+      setWordIndex(0);
     }
-  });
+  }, [textIndex, delay, wordIndex, currentText]);
 
   return (
     <>
@@ -27,7 +40,12 @@ export default function Home() {
   return (
     <div id="home" className="container">
       <h1>Hello, I'm Hecs</h1>
-      <h2><Typewrite text="Fullstack Web Developer" delay={100} /></h2>
+      <h2>
+        <Typewrite
+          words={["Programmer", "Full-stack Web Developer", "Game Developer"]}
+          delay={150}
+        />
+      </h2>
     </div>
   );
 }

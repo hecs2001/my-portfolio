@@ -1,20 +1,21 @@
-import { projects } from "../assets/data";
 import "../styles/Projects.css";
 
 function ProjectCard({ title, description, url }) {
   return (
     <div className="item-card glass">
-      <img src={"https://picsum.photos/200/300"} alt="Link Preview" />
-      <h3 className="project-title">{title}</h3>
-      <p>{description}</p>
-      <button
-        className="button text-button"
-        onClick={() => {
-          window.open(url, "_blank");
-        }}
-      >
-        View Project
-      </button>
+      <img className="item-image" src={"https://picsum.photos/1920/1080"} alt="Link Preview" />
+      <div className="item-details">
+        <h2>{title}</h2>
+        <p>{description}</p>
+        <button
+          className="button text-button"
+          onClick={() => {
+            window.open(url, "_blank");
+          }}
+        >
+          View Project
+        </button>
+      </div>
     </div>
   );
 }
@@ -26,20 +27,16 @@ export function Projects() {
         <h1>Projects</h1>
       </div>
       <div className="bottom-pane glass">
-        {!projects.length ? (
-          <h2>NO PROJECTS YET</h2>
-        ) : (
-          projects.map(({ id, title, description, link }) => {
-            return (
-              <ProjectCard
-                key={id}
-                title={title}
-                description={description}
-                url={link}
-              />
-            );
-          })
-        )}
+        <ProjectCard
+          title="Sample 1"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          url="https://github.com/hecs2001?tab=repositories"
+        />
+        <ProjectCard
+          title="Sample 2"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          url="https://www.google.com/"
+        />
       </div>
     </div>
   );

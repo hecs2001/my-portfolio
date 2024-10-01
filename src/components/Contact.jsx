@@ -41,11 +41,10 @@ export default function Contact() {
 
   useEffect(() => {
     var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if(forms.name.length < 0 || !forms.message.length < 0) {
-      return setButtonState(false);
-    }
-    if (forms.email.match(validRegex)) {
-      return setButtonState(false);
+    if ((forms.name.length !== 0) && (forms.email.length !== 0) && (forms.message.length !== 0)) {
+      if (forms.email.match(validRegex)) {
+        return setButtonState(false);
+      }
     }
     return setButtonState(true);
   }, [forms]);

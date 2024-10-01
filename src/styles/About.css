@@ -12,16 +12,11 @@
     }
     img:not(:hover) {
       filter: saturate(0%);
-      transition: saturate 500ms;
+      transition: filter 500ms;
     }
-    img:hover,
-    img:focus {
+    img:hover {
       filter: saturate(100%);
-      transition: saturate 500ms;
-    }
-    button {
-      border: 1px solid var(--font-color);
-      padding: 0.4rem 1.2rem;
+      transition: filter 500ms;
     }
     .personal-info,
     .education-info {
@@ -49,6 +44,7 @@
         text-decoration: none;
       }
       a:hover {
+        color: var(--accent-color);
         text-decoration: underline;
       }
     }

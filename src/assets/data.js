@@ -18,7 +18,7 @@ const personalInfo = [
 
 const introduction = {
   text:
-    "I'm a aspiring full-stack web developer and a game developer graduate that possesses strong attention to detail. My game development background also equipped me with a solid understanding of programming principles, problem-solving, and user experience design. I am now applying these skills to become a full-stack web developer, specializing in Python, React JS, Node.js, and Django. In addition to that, I'm a big fan of clean, minimalist aesthetics.",
+    "I'm a aspiring full-stack web developer, a game developer graduate, a big fan of clean and minimalist aesthetics and possesses strong attention to detail. My game development background also equipped me with a solid understanding of programming principles, problem-solving, and user experience design. Currently, I specialize in Python, React JS, and Node.js. So if you are interested, feel free to contact me.",
 };
 
 const education = [
@@ -65,8 +65,6 @@ const backendSkills = [
   { id: 2, skill: "MySQL", progress: 30 },
 ];
 
-const projects = [];
-
 const socialLinks = [
   { id: 0, social: "LinkedIn", link: "https://www.linkedin.com/in/hecs" },
   { id: 1, social: "GitHub", link: "https://github.com/hecs2001" },
@@ -80,6 +78,5 @@ export {
   workExperience,
   frontendSkills,
   backendSkills,
-  projects,
   socialLinks,
 };
