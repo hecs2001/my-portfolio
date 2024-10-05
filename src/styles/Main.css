@@ -1,0 +1,74 @@
+:root {
+  --sans-font: "Nunito", sans-serif;
+  --mono-font: "Fira Code", monospace;
+
+  --outline-color: rgb(1, 158, 254);
+  --error-color: rgb(244, 113, 116);
+
+  --background-color: rgb(12, 13, 12);
+  --container-color: rgb(27, 27, 27);
+  --item-color: rgb(18, 18, 18);
+  --print-color: rgb(243, 242, 237);
+  --text-color: rgb(0, 0, 0);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background-color: var(--background-color);
+  color: var(--print-color);
+  scroll-behavior: smooth;
+  body {
+    margin: 0%;
+    .container {
+      align-content: center;
+      margin: 7.5rem auto;
+      z-index: 1;
+    }
+    .container:not(#home) {
+      background-color: var(--container-color);
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    div {
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+  h1,
+  h2,
+  span,
+  button {
+    font-family: var(--sans-font);
+  }
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  input,
+  textarea {
+    font-family: var(--mono-font);
+  }
+  button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 650;
+    cursor: pointer;
+    gap: 0.2rem;
+    padding: 0.5rem 1rem;
+  }
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}

@@ -1,11 +1,5 @@
-import {
-  personalInfo,
-  introduction,
-  education,
-  workExperience,
-  frontendSkills,
-  backendSkills
-} from "../assets/data";
+import { motion } from "framer-motion";
+import { introduction, education, workExperience } from "../assets/data";
 import selfPortrait from "../assets/me.jpg";
 import "../styles/About.css";
 
@@ -16,28 +10,18 @@ export default function About() {
     return date.toLocaleString("en-EN", { month: "long" });
   }
 
-  function SkillDisplay({ skill, progress }) {
-    const progressStyle = { "--width": progress + "%" };
-    return (
-      <div className="progress-element skill">
-        <p className="progress-label" progress={progress + "%"}>
-          {skill}
-        </p>
-        <div className="progress-container" style={progressStyle}>
-          <progress max={100} value={progress}>
-            {progress}
-          </progress>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div id="about" className="container glass">
+    <motion.section
+      id="about"
+      className="container"
+      initial={{ scale: 0.8, opacity: 0.2 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      viewport={{ amount: 0.4 }}
+    >
       <div className="left-pane">
         <img src={selfPortrait} alt="Picture of Hecs" />
         <h1>About</h1>
-        <button
+        <motion.button
           className="button text-button"
           onClick={() => {
             window.open(
@@ -45,38 +29,14 @@ export default function About() {
               "_blank"
             );
           }}
+          whileHover={{ scale: 1.2 }}
+          whileFocus={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
         >
-          Open Resume
-        </button>
-        <div className="personal-info glass">
-          {personalInfo.map(({ id, title, content }) => {
-            return (
-              <span key={id}>
-                <h6>{title}</h6>
-                <h4 style={{fontWeight: "600"}}>
-                  {title === "Email" ? (
-                    <a href={"mailto:" + content}>{content}</a>
-                  ) : (
-                    content
-                  )}
-                </h4>
-              </span>
-            );
-          })}
-        </div>
-        <div className="education-info glass">
-          {education.map(({ id, level, course, school }) => {
-            return (
-              <span key={id}>
-                <h6>{level}</h6>
-                <h3>{course}</h3>
-                <h4>{school}</h4>
-              </span>
-            );
-          })}
-        </div>
+          Get Resume
+        </motion.button>
       </div>
-      <div className="right-pane glass">
+      <div className="right-pane">
         <div>
           <h4>{introduction.text}</h4>
         </div>
@@ -105,19 +65,19 @@ export default function About() {
             }
           )}
         </div>
-        <div className="skills-content">
-          <h2>Skills: Front-end</h2>
-          {frontendSkills.map(({ id, skill, progress }) => {
-            return <SkillDisplay key={id} skill={skill} progress={progress} />;
-          })}
-        </div>
-        <div className="skills-content">
-          <h2>Skills: Back-end</h2>
-          {backendSkills.map(({ id, skill, progress }) => {
-            return <SkillDisplay key={id} skill={skill} progress={progress} />;
+        <div className="education-info">
+          <h2>Education</h2>
+          {education.map(({ id, level, course, school }) => {
+            return (
+              <div key={id}>
+                <h6>{level}</h6>
+                <h3>{course}</h3>
+                <h4>{school}</h4>
+              </div>
+            );
           })}
         </div>
       </div>
-    </div>
+    </motion.section>
   );
 }

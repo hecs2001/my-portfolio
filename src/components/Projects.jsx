@@ -1,43 +1,44 @@
+import { motion } from "framer-motion";
+import { projects } from "../assets/data";
+import memoryGamePreview from "../assets/memory-game-preview.png"
 import "../styles/Projects.css";
 
-function ProjectCard({ title, description, url }) {
+function ProjectCard({ title, tags, url, image }) {
   return (
-    <div className="item-card glass">
-      <img className="item-image" src={"https://picsum.photos/1920/1080"} alt="Link Preview" />
+    <div className="item-card">
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        <img
+          src={image}
+          alt="Link Preview"
+        />
+      </a>
       <div className="item-details">
         <h2>{title}</h2>
-        <p>{description}</p>
-        <button
-          className="button text-button"
-          onClick={() => {
-            window.open(url, "_blank");
-          }}
-        >
-          View Project
-        </button>
+        {tags.map((item, index) => {
+          return <span key={index}>{item}</span>;
+        })}
       </div>
     </div>
   );
 }
 
-export function Projects() {
+export default function Projects() {
   return (
-    <div id="projects" className="container glass">
+    <motion.section
+      id="projects"
+      className="container"
+      initial={{ scale: 0.8, opacity: 0.2 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      viewport={{ amount: 0.4 }}
+    >
       <div className="top-pane">
         <h1>Projects</h1>
       </div>
-      <div className="bottom-pane glass">
-        <ProjectCard
-          title="Sample 1"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          url="https://github.com/hecs2001?tab=repositories"
-        />
-        <ProjectCard
-          title="Sample 2"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          url="https://www.google.com/"
-        />
+      <div className="bottom-pane">
+        {projects.map(({ id, title, tags, url }) => {
+          return <ProjectCard key={id} title={title} tags={tags} url={url} image={memoryGamePreview} />;
+        })}
       </div>
-    </div>
+    </motion.section>
   );
 }

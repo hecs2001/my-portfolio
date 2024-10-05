@@ -1,0 +1,12 @@
+@import url("Main.css");
+
+#footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 15rem;
+  .footer-text {
+    margin: 0%;
+    text-align: center;
+  }
+}

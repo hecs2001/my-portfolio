@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { socialLinks } from "../assets/data";
 import "../styles/Contact.css";
@@ -24,14 +25,18 @@ function SocialButton({ social, link }) {
     }
   }
   return (
-    <button
+    <motion.button
       className="button"
       onClick={() => {
         window.open(link, "_blank");
       }}
+      initial={{ opacity: 0.4 }}
+      whileHover={{ opacity: 1, scale: 1.5 }}
+      whileFocus={{ opacity: 1, scale: 1.5 }}
+      whileTap={{ scale: 0.9 }}
     >
       {getIcon(social)}
-    </button>
+    </motion.button>
   );
 }
 
@@ -40,8 +45,13 @@ export default function Contact() {
   const [buttonState, setButtonState] = useState(true);
 
   useEffect(() => {
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if ((forms.name.length !== 0) && (forms.email.length !== 0) && (forms.message.length !== 0)) {
+    var validRegex =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (
+      forms.name.length !== 0 &&
+      forms.email.length !== 0 &&
+      forms.message.length >= 10
+    ) {
       if (forms.email.match(validRegex)) {
         return setButtonState(false);
       }
@@ -75,16 +85,30 @@ export default function Contact() {
   };
 
   return (
-    <div id="contact" className="container glass">
+    <motion.section
+      id="contact"
+      className="container"
+      initial={{ scale: 0.8, opacity: 0.2 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      viewport={{ amount: 0.4 }}
+    >
       <div className="left-pane">
         <h1>Contact</h1>
+        <motion.a
+          href="mailto:liam.valdez@protonmail.com"
+          initial={{ opacity: 0.6 }}
+          whileHover={{ scale: 1.1, opacity: 1 }}
+          whileFocus={{ scale: 1.1, opacity: 1 }}
+        >
+          liam.valdez@protonmail.com
+        </motion.a>
         <div className="social-links">
           {socialLinks.map(({ id, social, link }) => {
             return <SocialButton key={id} social={social} link={link} />;
           })}
         </div>
       </div>
-      <div className="right-pane glass">
+      <div className="right-pane">
         <form onSubmit={sendEmail} method="POST">
           <div className="input-box">
             <PersonIcon />
@@ -115,15 +139,17 @@ export default function Contact() {
               placeholder="Message"
             />
           </div>
-          <button
+          <motion.button
             className="button send-button"
             type="submit"
             disabled={buttonState}
+            whileHover={!buttonState ? { scale: 1.1 } : null}
+            whileTap={!buttonState ? { scale: 0.9 } : null}
           >
-            Send
-          </button>
+            Send Message
+          </motion.button>
         </form>
       </div>
-    </div>
+    </motion.section>
   );
 }

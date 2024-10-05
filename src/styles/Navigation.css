@@ -1,0 +1,25 @@
+@import url("Main.css");
+
+#navigation-bar {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 22px;
+  background: rgba(27, 27, 27, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1.2rem 2.8rem;
+  gap: 2rem;
+  z-index: 2;
+  button {
+    background: transparent;
+    color: var(--print-color);
+    border: transparent;
+    padding: 0%;
+  }
+}

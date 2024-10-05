@@ -1,24 +1,5 @@
-const personalInfo = [
-  {
-    id: 0,
-    title: "Name",
-    content: "Hector Liam T. Valdez",
-  },
-  {
-    id: 1,
-    title: "Email",
-    content: "liam.valdez@protonmail.com",
-  },
-  {
-    id: 2,
-    title: "Location",
-    content: "Imus City, Cavite 4103",
-  },
-];
-
 const introduction = {
-  text:
-    "I'm a aspiring full-stack web developer, a game developer graduate, a big fan of clean and minimalist aesthetics and possesses strong attention to detail. My game development background also equipped me with a solid understanding of programming principles, problem-solving, and user experience design. Currently, I specialize in Python, React JS, and Node.js. So if you are interested, feel free to contact me.",
+  text: "You can address me by my nickname, Hecs. During my game development journey in university, I have gained a solid understanding of programming principles, problem-solving, and user experience design. Now, I am applying these skills to become a web developer, specializing in Python, React JS, and Interaction Design. In designer perspective, I appreciate the simplicity and functionality of minimalist designs.",
 };
 
 const education = [
@@ -39,7 +20,7 @@ const education = [
 const workExperience = [
   {
     id: 0,
-    title: "IT Technical Support",
+    title: "IT Technical Support (Student Intern)",
     company: "FiveTwenty IT Services",
     startDate: {
       startYear: 2023,
@@ -53,16 +34,31 @@ const workExperience = [
 ];
 
 const frontendSkills = [
-  { id: 0, skill: "HTML5", progress: 90 },
-  { id: 1, skill: "CSS3", progress: 85 },
-  { id: 2, skill: "JavaScript ES6", progress: 68 },
-  { id: 3, skill: "React JS", progress: 45 },
+  { id: 0, skill: "HTML5", proficiency: 90 },
+  { id: 1, skill: "CSS3", proficiency: 85 },
+  { id: 2, skill: "JavaScript ES6", proficiency: 68 },
+  { id: 3, skill: "React JS", proficiency: 45 },
 ];
 
 const backendSkills = [
-  { id: 0, skill: "Python", progress: 65 },
-  { id: 1, skill: "Django", progress: 10 },
-  { id: 2, skill: "MySQL", progress: 30 },
+  { id: 0, skill: "Python", proficiency: 65 },
+  { id: 1, skill: "Django", proficiency: 10 },
+  { id: 2, skill: "MySQL", proficiency: 30 },
+];
+
+const otherSkills = [
+  { id: 0, skill: "Git", proficiency: 50 },
+  { id: 1, skill: "Framer Motion", proficiency: 40 },
+  { id: 2, skill: "Blender (3D)", proficiency: 35 },
+];
+
+const projects = [
+  {
+    id: 0,
+    title: "Memory Game",
+    tags: ["Game", "Vanilla Javascript"],
+    url: "https://hecs2001.github.io/memory-game/",
+  },
 ];
 
 const socialLinks = [
@@ -72,11 +68,12 @@ const socialLinks = [
 ];
 
 export {
-  personalInfo,
   introduction,
   education,
   workExperience,
   frontendSkills,
   backendSkills,
+  otherSkills,
+  projects,
   socialLinks,
 };

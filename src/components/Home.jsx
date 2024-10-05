@@ -1,36 +1,43 @@
-import { useState, useEffect } from "react";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { useEffect } from "react";
 import "../styles/Home.css";
 
-function Typewrite({ words, delay }) {
-  const [currentText, setCurrentText] = useState("");
-  const [textIndex, setTextIndex] = useState(0);
-  const [wordIndex, setWordIndex] = useState(0);
-  const currentWord = words[wordIndex];
+function AnimatedText() {
+  const wordIndex = useMotionValue(0);
+  const words = ["Web Developer", "Game Developer", "Interaction Designer?"];
+  const baseWord = useTransform(wordIndex, (latest) => words[latest]);
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const displayText = useTransform(rounded, (latest) => baseWord.get().slice(0, latest));
+  const updatedThisRound = useMotionValue(true);
 
   useEffect(() => {
-    let timeout;
-    if (wordIndex < words.length) {
-      if (textIndex < currentWord.length) {
-        timeout = setTimeout(() => {
-          setCurrentText((prevText) => prevText + currentWord[textIndex]);
-          setTextIndex((prevIndex) => prevIndex + 1);
-        }, delay);
-      } else {
-        timeout = setTimeout(() => {
-          setCurrentText("");
-          setTextIndex(0);
-          setWordIndex((prevIndex) => prevIndex + 1);
-        }, (delay * currentWord.length));
+    animate(count, 60, {
+      type: "tween",
+      delay: 2,
+      duration: 1.2,
+      ease: "easeIn",
+      repeat: Infinity,
+      repeatType: "reverse",
+      repeatDelay: 1,
+      onUpdate(latest) {
+        if (updatedThisRound.get() === true && latest > 0) {
+          updatedThisRound.set(false);
+        } else if (updatedThisRound.get() === false && latest === 0) {
+          if (wordIndex.get() === words.length - 1) {
+            wordIndex.set(0);
+          } else {
+            wordIndex.set(wordIndex.get() + 1);
+          }
+          updatedThisRound.set(true);
+        }
       }
-      return () => clearTimeout(timeout);
-    } else {
-      setWordIndex(0);
-    }
-  }, [textIndex, delay, wordIndex, currentText]);
+    });
+  }, []);
 
   return (
     <>
-      <span>{currentText}</span>
+      <motion.span>{displayText}</motion.span>
       <span id="cursor">_</span>
     </>
   );
@@ -38,14 +45,9 @@ function Typewrite({ words, delay }) {
 
 export default function Home() {
   return (
-    <div id="home" className="container">
-      <h1>Hello, I'm Hecs</h1>
-      <h2>
-        <Typewrite
-          words={["Programmer", "Full-stack Web Developer", "Game Developer"]}
-          delay={150}
-        />
-      </h2>
-    </div>
+    <section id="home" className="container">
+      <h1>Hector Liam Valdez</h1>
+      <h2>I am a {AnimatedText()}</h2>
+    </section>
   );
 }
