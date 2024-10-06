@@ -18,7 +18,9 @@
     }
   }
   .bottom-pane {
+    display: flex;
     flex-direction: row;
+    align-items: flex-start;
     .skills-content {
       flex: 1;
       display: flex;
@@ -28,8 +30,8 @@
       border-radius: 22px;
       background-color: var(--item-color);
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      gap: 1.5rem;
-      padding: 2rem;
+      gap: 2rem;
+      padding: 2.5rem;
       h2 {
         margin: 0.3rem;
         height: fit-content;
@@ -52,7 +54,7 @@
           top: 0;
           right: 0;
         }
-        .progress-container {
+        .progress-bar {
           position: relative;
           display: inline-block;
           background: rgba(243, 242, 237, 0.1);
@@ -60,18 +62,15 @@
           height: 1rem;
           border-radius: 6px;
           overflow: hidden;
-          progress {
-            opacity: 0;
-          }
         }
-        .progress-container::before {
+        .progress-bar::before {
           content: "";
           position: absolute;
+          background: var(--print-color);
           top: 0;
           left: 0;
           height: 100%;
           width: var(--width);
-          background: var(--print-color);
         }
       }
     }

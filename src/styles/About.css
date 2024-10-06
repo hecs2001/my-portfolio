@@ -1,14 +1,14 @@
 @import url("Main.css");
 
 #about.container {
-  max-width: 55rem;
+  max-width: 65rem;
   display: flex;
   flex-direction: row;
   border-radius: 32px;
   .left-pane, .right-pane {
     gap: 1rem;
-    margin: 0.8rem;
-    padding: 1.5rem;
+    margin: 1rem;
+    padding: 2rem 2.5rem;
   }
   .left-pane {
     flex: 40%;

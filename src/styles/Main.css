@@ -11,9 +11,10 @@
   --print-color: rgb(243, 242, 237);
   --text-color: rgb(0, 0, 0);
 
-  font-synthesis: none;
+  backface-visibility: hidden;
+  font-synthesis: weight;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
@@ -37,7 +38,7 @@ html {
       align-content: center;
       justify-content: center;
       h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
     }
   }
@@ -55,6 +56,18 @@ html {
   input,
   textarea {
     font-family: var(--mono-font);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  button,
+  img {
+    user-select: none;
   }
   button {
     display: flex;

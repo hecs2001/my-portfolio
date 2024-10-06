@@ -7,9 +7,12 @@ function NavButton({ name }) {
     <motion.button
       initial={{ opacity: 0.2 }}
       whileHover={{ opacity: 1 }}
-      onClick={(event) => {
-        event.preventDefault();
+      onClick={() => {
+        var oldURL = window.location.href;
         window.location.hash = name;
+        window.addEventListener("hashchange", function(){
+          window.history.pushState({}, null, oldURL);
+        });
       }}
     >
       {displayName.toUpperCase()}

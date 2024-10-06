@@ -9,11 +9,7 @@ function SkillDisplay({ skill, proficiency }) {
       <p className="progress-label" progress={proficiency + "%"}>
         {skill}
       </p>
-      <div className="progress-container" style={progressStyle}>
-        <progress max={100} value={proficiency}>
-          {proficiency}
-        </progress>
-      </div>
+      <div className="progress-bar" style={progressStyle} />
     </div>
   );
 }
@@ -34,19 +30,25 @@ export default function Skills() {
         <div className="skills-content">
           <h2>Front-end</h2>
           {MyData.frontendSkills.map(({ id, skill, proficiency }) => {
-            return <SkillDisplay key={id} skill={skill} proficiency={proficiency} />;
+            return (
+              <SkillDisplay key={id} skill={skill} proficiency={proficiency} />
+            );
           })}
         </div>
         <div className="skills-content">
           <h2>Back-end</h2>
           {MyData.backendSkills.map(({ id, skill, proficiency }) => {
-            return <SkillDisplay key={id} skill={skill} proficiency={proficiency} />;
+            return (
+              <SkillDisplay key={id} skill={skill} proficiency={proficiency} />
+            );
           })}
         </div>
         <div className="skills-content">
           <h2>Other</h2>
           {MyData.otherSkills.map(({ id, skill, proficiency }) => {
-            return <SkillDisplay key={id} skill={skill} proficiency={proficiency} />;
+            return (
+              <SkillDisplay key={id} skill={skill} proficiency={proficiency} />
+            );
           })}
         </div>
       </div>

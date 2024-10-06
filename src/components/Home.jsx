@@ -4,7 +4,7 @@ import "../styles/Home.css";
 
 function AnimatedText() {
   const wordIndex = useMotionValue(0);
-  const words = ["Web Developer", "Game Developer", "Interaction Designer?"];
+  const words = ["Web Developer", "Game Developer", "Interaction Designer???"];
   const baseWord = useTransform(wordIndex, (latest) => words[latest]);
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
@@ -47,7 +47,7 @@ export default function Home() {
   return (
     <section id="home" className="container">
       <h1>Hector Liam Valdez</h1>
-      <h2>I am a {AnimatedText()}</h2>
+      <h2>I'm a {AnimatedText()}</h2>
     </section>
   );
 }

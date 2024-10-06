@@ -34,29 +34,32 @@ const workExperience = [
 ];
 
 const frontendSkills = [
-  { id: 0, skill: "HTML5", proficiency: 90 },
-  { id: 1, skill: "CSS3", proficiency: 85 },
-  { id: 2, skill: "JavaScript ES6", proficiency: 68 },
+  { id: 0, skill: "HTML5", proficiency: 80 },
+  { id: 1, skill: "CSS3", proficiency: 75 },
+  { id: 2, skill: "JavaScript ES6", proficiency: 60 },
   { id: 3, skill: "React JS", proficiency: 45 },
+  { id: 4, skill: "Framer Motion", proficiency: 20 },
 ];
 
 const backendSkills = [
-  { id: 0, skill: "Python", proficiency: 65 },
-  { id: 1, skill: "Django", proficiency: 10 },
-  { id: 2, skill: "MySQL", proficiency: 30 },
+  { id: 0, skill: "Python", proficiency: 60 },
+  { id: 1, skill: "Django", proficiency: 30 },
+  { id: 2, skill: "Node.js", proficiency: 30 },
+  { id: 3, skill: "MySQL", proficiency: 30 },
 ];
 
 const otherSkills = [
   { id: 0, skill: "Git", proficiency: 50 },
-  { id: 1, skill: "Framer Motion", proficiency: 40 },
-  { id: 2, skill: "Blender (3D)", proficiency: 35 },
+  { id: 1, skill: "Java", proficiency: 60 },
+  { id: 2, skill: "C#", proficiency: 40 },
+  { id: 3, skill: "Blender (3D)", proficiency: 35 },
 ];
 
 const projects = [
   {
     id: 0,
     title: "Memory Game",
-    tags: ["Game", "Vanilla Javascript"],
+    tags: ["Capstone Project", "Game", "Vanilla Javascript"],
     url: "https://hecs2001.github.io/memory-game/",
   },
 ];
