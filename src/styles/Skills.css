@@ -6,7 +6,8 @@
   flex-direction: column;
   border-radius: 32px;
   padding: 1rem;
-  .top-pane, .bottom-pane {
+  .top-pane,
+  .bottom-pane {
     display: flex;
     gap: 1rem;
     width: 100%;
@@ -72,6 +73,20 @@
           height: 100%;
           width: var(--width);
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  #skills {
+    max-width: 90%;
+    .bottom-pane {
+      flex-direction: column;
+      flex-wrap: wrap;
+      .skills-content {
+        width: 85%;
+        gap: 1rem;
       }
     }
   }

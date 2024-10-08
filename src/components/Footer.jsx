@@ -4,7 +4,7 @@ const footerStyle = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  minHeight: "15rem",
+  minHeight: "22rem",
 }
 
 const footerTextStyle = {

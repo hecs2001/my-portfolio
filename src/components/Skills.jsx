@@ -21,7 +21,7 @@ export default function Skills() {
       className="container"
       initial={{ scale: 0.8, opacity: 0.2 }}
       whileInView={{ scale: 1, opacity: 1 }}
-      viewport={{ amount: 0.4 }}
+      viewport={{ amount: 0.1 }}
     >
       <div className="top-pane">
         <h1>Skills</h1>

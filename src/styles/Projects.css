@@ -64,3 +64,13 @@
     }
   }
 }
+
+@media (max-width: 850px) {
+  #projects {
+    max-width: 90%;
+    .bottom-pane {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

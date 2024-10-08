@@ -85,3 +85,7 @@ html {
     height: 2rem;
   }
 }
+
+* {
+  transition: font-size 500ms ease, min-height 500ms ease, max-width 500ms ease, gap 500ms ease;
+}
