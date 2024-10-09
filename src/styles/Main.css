@@ -4,13 +4,7 @@
 
   --outline-color: rgb(1, 158, 254);
   --error-color: rgb(244, 113, 116);
-
-  --background-color: rgb(12, 13, 12);
-  --container-color: rgb(27, 27, 27);
-  --item-color: rgb(18, 18, 18);
-  --print-color: rgb(243, 242, 237);
-  --text-color: rgb(0, 0, 0);
-
+  
   backface-visibility: hidden;
   font-synthesis: weight;
   text-rendering: optimizeLegibility;
@@ -18,11 +12,49 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.dark {
+  --background-color: rgb(12, 12, 12);
+  --container-color: rgb(27, 27, 27);
+  --item-color: rgb(18, 18, 18);
+  --print-color: rgb(243, 242, 237);
+  --text-color: rgb(0, 0, 0);
+  #navigation-bar {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
+    button:has(svg) {
+      background: rgba(243, 242, 237, 0.1);
+    }
+  }
+  #skills {
+    .progress-bar {
+      background: rgba(243, 242, 237, 0.1);
+    }
+  }
+}
+
+.light {
+  --background-color: rgb(231, 234, 229);
+  --container-color: rgb(248, 246, 240);
+  --item-color: rgb(251, 250, 245);
+  --print-color: rgb(0, 0, 0);
+  --text-color: rgb(243, 242, 237);
+  #navigation-bar {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+    button:has(svg) {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+  #skills {
+    .progress-bar {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
 html {
-  background-color: var(--background-color);
-  color: var(--print-color);
   scroll-behavior: smooth;
   body {
+    background-color: var(--background-color);
+    color: var(--print-color);
     margin: 0%;
     .container {
       align-content: center;
@@ -87,5 +119,7 @@ html {
 }
 
 * {
-  transition: font-size 500ms ease, min-height 500ms ease, max-width 500ms ease, gap 500ms ease;
+  transition: font-size 500ms ease, min-height 500ms ease, max-width 500ms ease,
+    gap 500ms ease, background-color 500ms ease, border 500ms ease,
+    color 500ms ease;
 }

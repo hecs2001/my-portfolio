@@ -84,8 +84,17 @@
 
 @media (max-width: 800px) {
   #about.container {
-    h3, h4, h5, h6 {
+    h2 {
+      font-size: 1.1rem;
+    }
+    h3 {
       font-size: 0.9rem;
+    }
+    h4 {
+      font-size: 0.8rem;
+    }
+    h5 {
+      font-size: 0.6rem;
     }
   }
 }

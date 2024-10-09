@@ -76,7 +76,6 @@ export default function Contact() {
         () => {
           alert("SUCCESS!");
           setForms({ name: "", email: "", message: "" });
-          setButtonState(true);
         },
         (error) => {
           alert("FAILED...", error.text);
