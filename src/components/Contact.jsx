@@ -1,44 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { socialLinks } from "../assets/data";
-import "../styles/Contact.css";
-import {
-  LinkedInIcon,
-  GitHubIcon,
-  BehanceIcon,
-  PersonIcon,
-  AtIcon,
-} from "../assets/Icons";
-
-function SocialButton({ social, link }) {
-  function getIcon(socialName) {
-    switch (socialName) {
-      case "LinkedIn":
-        return <LinkedInIcon />;
-      case "GitHub":
-        return <GitHubIcon />;
-      case "Behance":
-        return <BehanceIcon />;
-      default:
-        return null;
-    }
-  }
-  return (
-    <motion.button
-      className="button"
-      onClick={() => {
-        window.open(link, "_blank");
-      }}
-      initial={{ opacity: 0.4 }}
-      whileHover={{ opacity: 1, scale: 1.5 }}
-      whileFocus={{ opacity: 1, scale: 1.5 }}
-      whileTap={{ scale: 0.9 }}
-    >
-      {getIcon(social)}
-    </motion.button>
-  );
-}
+import * as Icon from "../assets/Icons";
 
 export default function Contact() {
   const [forms, setForms] = useState({ name: "", email: "", message: "" });
@@ -86,31 +49,15 @@ export default function Contact() {
   return (
     <motion.section
       id="contact"
-      className="container"
-      initial={{ scale: 0.8, opacity: 0.2 }}
-      whileInView={{ scale: 1, opacity: 1 }}
-      viewport={{ amount: 0.1 }}
+      initial={{ opacity: 0.1 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ amount: 0.3 }}
     >
-      <div className="left-pane">
-        <h1>Contact</h1>
-        <motion.a
-          href="mailto:liam.valdez@protonmail.com"
-          initial={{ opacity: 0.6 }}
-          whileHover={{ scale: 1.1, opacity: 1 }}
-          whileFocus={{ scale: 1.1, opacity: 1 }}
-        >
-          liam.valdez@protonmail.com
-        </motion.a>
-        <div className="social-links">
-          {socialLinks.map(({ id, social, link }) => {
-            return <SocialButton key={id} social={social} link={link} />;
-          })}
-        </div>
-      </div>
-      <div className="right-pane">
-        <form onSubmit={sendEmail} method="POST">
+      <div className="container">
+        <h1 className="title-heading">Contact</h1>
+        <form id="message-form" onSubmit={sendEmail} method="POST">
           <div className="input-box">
-            <PersonIcon />
+            <Icon.PersonIcon />
             <input
               type="text"
               name="name"
@@ -120,7 +67,7 @@ export default function Contact() {
             />
           </div>
           <div className="input-box">
-            <AtIcon />
+            <Icon.AtIcon />
             <input
               type="email"
               name="email"
@@ -139,7 +86,6 @@ export default function Contact() {
             />
           </div>
           <motion.button
-            className="button send-button"
             type="submit"
             disabled={buttonState}
             whileHover={!buttonState ? { scale: 1.1 } : null}

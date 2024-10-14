@@ -1,5 +1,5 @@
 const introduction = {
-  text: "You can address me by my nickname, Hecs. During my game development journey in university, I have gained a solid understanding of programming principles, problem-solving, and user experience design. Now, I am applying these skills to become a web developer, specializing in Python, React JS, and Interaction Design. In designer perspective, I appreciate the simplicity and functionality of minimalist designs.",
+  text: "During my game development journey in university, I have gained a solid understanding of programming principles, problem-solving, and user experience design. Now, I am applying these skills to become a web developer, specializing in Python, React JS, and Interaction Design.",
 };
 
 const education = [
@@ -33,28 +33,6 @@ const workExperience = [
   },
 ];
 
-const frontendSkills = [
-  { id: 0, skill: "HTML5", proficiency: 80 },
-  { id: 1, skill: "CSS3", proficiency: 75 },
-  { id: 2, skill: "JavaScript ES6", proficiency: 60 },
-  { id: 3, skill: "React JS", proficiency: 45 },
-  { id: 4, skill: "Framer Motion", proficiency: 20 },
-];
-
-const backendSkills = [
-  { id: 0, skill: "Python", proficiency: 60 },
-  { id: 1, skill: "Django", proficiency: 30 },
-  { id: 2, skill: "Node.js", proficiency: 30 },
-  { id: 3, skill: "MySQL", proficiency: 30 },
-];
-
-const otherSkills = [
-  { id: 0, skill: "Git", proficiency: 50 },
-  { id: 1, skill: "Java", proficiency: 60 },
-  { id: 2, skill: "C#", proficiency: 40 },
-  { id: 3, skill: "Blender (3D)", proficiency: 35 },
-];
-
 const projects = [
   {
     id: 0,
@@ -64,19 +42,9 @@ const projects = [
   },
 ];
 
-const socialLinks = [
-  { id: 0, social: "LinkedIn", link: "https://www.linkedin.com/in/hecs" },
-  { id: 1, social: "GitHub", link: "https://github.com/hecs2001" },
-  { id: 2, social: "Behance", link: "https://www.behance.net/hecs" },
-];
-
 export {
   introduction,
   education,
   workExperience,
-  frontendSkills,
-  backendSkills,
-  otherSkills,
   projects,
-  socialLinks,
 };

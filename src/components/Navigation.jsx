@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { MoonIcon, SunIcon } from "../assets/Icons";
-import "../styles/Navigation.css";
 
 function ThemeSwitcher() {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || 'dark');
+  const [theme, setTheme] = useState(localStorage.getItem("theme"));
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
-    document.body.setAttribute('class', theme);
+    document.documentElement.dataset.theme = theme;
   }, [theme])
 
   const toggleTheme = () => {
@@ -24,8 +23,8 @@ function ThemeSwitcher() {
 
 function NavButton({ name }) {
   return (
-    <button>
-      <Link activeClass="active" to={name} offset={-220} duration={500} spy={true}>
+    <button id="navigation-button">
+      <Link activeClass="active" to={name} spy={true}>
         {name.toUpperCase()}
       </Link>
     </button>

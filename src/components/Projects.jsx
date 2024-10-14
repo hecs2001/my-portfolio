@@ -1,21 +1,17 @@
 import { motion } from "framer-motion";
 import { projects } from "../assets/data";
-import memoryGamePreview from "../assets/memory-game-preview.png"
-import "../styles/Projects.css";
 
-function ProjectCard({ title, tags, url, image }) {
+function ProjectCard({ title, tags, url }) {
   return (
-    <div className="item-card">
-      <a href={url} target="_blank" rel="noopener noreferrer">
-        <img
-          src={image}
-          alt="Link Preview"
-        />
-      </a>
-      <div className="item-details">
-        <h2>{title}</h2>
+    <div className="project-item">
+      <h2>
+        <a href={url} target="_blank" rel="noopener noreferrer">
+          {title}
+        </a>
+      </h2>
+      <div className="project-tags">
         {tags.map((item, index) => {
-          return <span key={index}>{item}</span>;
+          return <p key={index}>{item}</p>;
         })}
       </div>
     </div>
@@ -26,18 +22,17 @@ export default function Projects() {
   return (
     <motion.section
       id="projects"
-      className="container"
-      initial={{ scale: 0.8, opacity: 0.2 }}
-      whileInView={{ scale: 1, opacity: 1 }}
-      viewport={{ amount: 0.1 }}
+      initial={{ opacity: 0.1 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ amount: 0.3 }}
     >
-      <div className="top-pane">
-        <h1>Projects</h1>
-      </div>
-      <div className="bottom-pane">
-        {projects.map(({ id, title, tags, url }) => {
-          return <ProjectCard key={id} title={title} tags={tags} url={url} image={memoryGamePreview} />;
-        })}
+      <div className="container">
+        <h1 className="title-heading">Projects</h1>
+        <div id="project-display">
+          {projects.map(({ id, title, tags, url }) => {
+            return <ProjectCard key={id} title={title} tags={tags} url={url} />;
+          })}
+        </div>
       </div>
     </motion.section>
   );

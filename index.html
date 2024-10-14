@@ -1,17 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-      rel="stylesheet"
+    <meta
+      name="description"
+      content="A website portfolio about Hector Liam Valdez (Hecs)."
     />
+    <link rel="stylesheet" href="./src/styles/Themes.css" />
+    <script>
+      const theme = localStorage.getItem("theme");
+      if (theme === null) {
+        localStorage.setItem("theme", "dark");
+      }
+      document.documentElement.dataset.theme = theme;
+
+      window.addEventListener("DOMContentLoaded", function () {
+        this.document.body.style.opacity = 0;
+        this.setTimeout(function () {
+          document.body.style.opacity = 1;
+        }, 200);
+      });
+    </script>
     <title>Hecs &#8226; Portfolio</title>
   </head>
-  <body class="light">
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
