@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import * as MySkill from "../assets/Skills";
 
 function SkillDisplay({ icon, skill, proficiency }) {
@@ -16,12 +15,7 @@ function SkillDisplay({ icon, skill, proficiency }) {
 
 export default function Skills() {
   return (
-    <motion.section
-      id="skills"
-      initial={{ opacity: 0.1 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ amount: 0.3 }}
-    >
+    <section id="skills">
       <div className="container">
         <h1 className="title-heading">Skills</h1>
         <div id="skills-content">
@@ -66,6 +60,6 @@ export default function Skills() {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

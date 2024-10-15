@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { introduction, education, workExperience } from "../assets/data";
 
 export default function About() {
@@ -9,12 +8,7 @@ export default function About() {
   }
 
   return (
-    <motion.section
-      id="about"
-      initial={{ opacity: 0.1 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ amount: 0.3 }}
-    >
+    <section id="about">
       <div className="container">
         <h1 className="title-heading">About Me</h1>
         <div id="about-details">
@@ -60,6 +54,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

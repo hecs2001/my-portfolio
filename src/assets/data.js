@@ -1,5 +1,5 @@
 const introduction = {
-  text: "During my game development journey in university, I have gained a solid understanding of programming principles, problem-solving, and user experience design. Now, I am applying these skills to become a web developer, specializing in Python, React JS, and Interaction Design.",
+  text: "During my game development journey in university, I have gained a solid understanding of programming principles, problem-solving, and user experience design. Now that I am taking a step towards the industry, I am applying these skills to become a web developer, specializing in Python, React, and Web Design.",
 };
 
 const education = [

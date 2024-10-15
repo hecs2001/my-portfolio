@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { projects } from "../assets/data";
 
 function ProjectCard({ title, tags, url }) {
@@ -20,12 +19,7 @@ function ProjectCard({ title, tags, url }) {
 
 export default function Projects() {
   return (
-    <motion.section
-      id="projects"
-      initial={{ opacity: 0.1 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ amount: 0.3 }}
-    >
+    <section id="projects">
       <div className="container">
         <h1 className="title-heading">Projects</h1>
         <div id="project-display">
@@ -34,6 +28,6 @@ export default function Projects() {
           })}
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

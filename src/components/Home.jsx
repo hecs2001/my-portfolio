@@ -54,28 +54,21 @@ export default function Home() {
         <h1>Hi, my name is <span>Hecs</span>.</h1>
         <h2>A {AnimatedText()}</h2>
         <div>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileFocus={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
+          <button>
             <Link to="contact">
               Contact Me
             </Link>
-          </motion.button>
-          <motion.button
+          </button>
+          <button
             onClick={() => {
               window.open(
                 "https://www.canva.com/design/DAGN1tAikM0/sJnAIXeHK194zLqa3lxhSQ/edit?utm_content=DAGN1tAikM0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
                 "_blank"
               );
             }}
-            whileHover={{ scale: 1.1 }}
-            whileFocus={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
           >
             Download Resume
-          </motion.button>
+          </button>
         </div>
       </div>
     </section>

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import * as Icon from "../assets/Icons";
 
@@ -47,12 +46,7 @@ export default function Contact() {
   };
 
   return (
-    <motion.section
-      id="contact"
-      initial={{ opacity: 0.1 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ amount: 0.3 }}
-    >
+    <section id="contact">
       <div className="container">
         <h1 className="title-heading">Contact</h1>
         <form id="message-form" onSubmit={sendEmail} method="POST">
@@ -85,16 +79,14 @@ export default function Contact() {
               placeholder="Message"
             />
           </div>
-          <motion.button
+          <button
             type="submit"
             disabled={buttonState}
-            whileHover={!buttonState ? { scale: 1.1 } : null}
-            whileTap={!buttonState ? { scale: 0.9 } : null}
           >
             Send Message
-          </motion.button>
+          </button>
         </form>
       </div>
-    </motion.section>
+    </section>
   );
 }
