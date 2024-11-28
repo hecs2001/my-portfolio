@@ -3,7 +3,7 @@
 :root[data-theme="dark"] {
   --background-color: rgb(12, 12, 12);
   --container-color: rgb(27, 27, 27);
-  --accent-color: rgb(185, 166, 224);
+  --accent-color: rgb(139, 223, 226);
   --print-color: rgb(243, 242, 237);
   --text-color: rgb(0, 0, 0);
   --error-color: rgb(221, 68, 85);
@@ -12,7 +12,7 @@
 :root[data-theme="light"] {
   --background-color: rgb(231, 234, 229);
   --container-color: rgb(248, 246, 240);
-  --accent-color: rgb(147, 112, 219);
+  --accent-color: rgb(60, 140, 140);
   --print-color: rgb(0, 0, 0);
   --text-color: rgb(243, 242, 237);
   --error-color: rgb(179, 28, 69);

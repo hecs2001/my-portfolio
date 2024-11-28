@@ -1,5 +1,5 @@
 const introduction = {
-  text: "During my game development journey in university, I have gained a solid understanding of programming principles, problem-solving, and user experience design. Now that I am taking a step towards the industry, I am applying these skills to become a web developer, specializing in Python, React, and Web Design.",
+  text: "During my game development journey in university, I have gained a solid understanding of programming principles, problem-solving, and user experience design. Now that I am taking a step towards the industry, I am applying these skills to become a front-end developer, specializing in React.js.",
 };
 
 const education = [
@@ -20,7 +20,8 @@ const education = [
 const workExperience = [
   {
     id: 0,
-    title: "IT Technical Support (Student Intern)",
+    title: "IT Technical Support",
+    employment: "Student Intern",
     company: "FiveTwenty IT Services",
     startDate: {
       startYear: 2023,
@@ -36,8 +37,14 @@ const workExperience = [
 const projects = [
   {
     id: 0,
+    title: "NetTeach",
+    tags: ["Capstone Project", "Learning Platform", "Website Builder", "Web Design"],
+    url: "https://hectorliamvaldez.wixsite.com/netteach",
+  },
+  {
+    id: 1,
     title: "Memory Game",
-    tags: ["Capstone Project", "Game", "Vanilla Javascript"],
+    tags: ["Practical Project", "Game", "Vanilla Javascript"],
     url: "https://hecs2001.github.io/memory-game/",
   },
 ];

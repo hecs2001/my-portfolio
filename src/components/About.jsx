@@ -16,17 +16,19 @@ export default function About() {
             <h4>{introduction.text}</h4>
           </div>
           <div id="experience">
-            <h2>Experience</h2>
+            <h2>Work Experience</h2>
             {workExperience.map(
               ({
                 id,
                 title,
+                employment,
                 company,
                 startDate: { startYear, startMonth },
                 endDate: { endYear, endMonth },
               }) => {
                 return (
                   <div key={id}>
+                    <h6>{employment}</h6>
                     <h3>{title}</h3>
                     <h4>{company}</h4>
                     <h5>

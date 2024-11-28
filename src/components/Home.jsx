@@ -6,10 +6,9 @@ import selfPortrait from "../assets/me.svg";
 function AnimatedText() {
   const wordIndex = useMotionValue(0);
   const words = [
+    "Front-end Developer",
     "Web Developer",
-    "Game Developer",
     "Programmer",
-    "Interaction Designer?",
   ];
   const baseWord = useTransform(wordIndex, (latest) => words[latest]);
   const count = useMotionValue(0);
@@ -52,7 +51,8 @@ export default function Home() {
       <img src={selfPortrait} alt="Picture of Hecs" />
       <div>
         <h1>Hi, my name is <span>Hecs</span>.</h1>
-        <h2>A {AnimatedText()}</h2>
+        <h2>A {AnimatedText()}<span id="cursor">|</span></h2>
+        <h4>from Cavite, Philippines</h4>
         <div>
           <button>
             <Link to="contact">

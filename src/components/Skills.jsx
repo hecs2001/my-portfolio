@@ -19,7 +19,20 @@ export default function Skills() {
       <div className="container">
         <h1 className="title-heading">Skills</h1>
         <div id="skills-content">
-          <div id="frontend">
+          <div className="skill-category">
+            <h2>Languages</h2>
+            {MySkill.programmingSkills.map(({ id, icon, skill, proficiency }) => {
+              return (
+                <SkillDisplay
+                  key={id}
+                  icon={icon}
+                  skill={skill}
+                  proficiency={proficiency}
+                />
+              );
+            })}
+          </div>
+          <div className="skill-category">
             <h2>Front-end</h2>
             {MySkill.frontendSkills.map(({ id, icon, skill, proficiency }) => {
               return (
@@ -32,7 +45,7 @@ export default function Skills() {
               );
             })}
           </div>
-          <div id="backend">
+          <div className="skill-category">
             <h2>Back-end</h2>
             {MySkill.backendSkills.map(({ id, icon, skill, proficiency }) => {
               return (
@@ -45,18 +58,44 @@ export default function Skills() {
               );
             })}
           </div>
-          <div id="other">
+          <div className="skill-category">
+            <h2>Database</h2>
+            {MySkill.databaseSkills.map(({ id, icon, skill, proficiency }) => {
+              return (
+                <SkillDisplay
+                  key={id}
+                  icon={icon}
+                  skill={skill}
+                  proficiency={proficiency}
+                />
+              );
+            })}
+          </div>
+          <div className="skill-category">
+            <h2>Software</h2>
+            {MySkill.softwareSkills.map(({ id, icon, skill, proficiency }) => {
+              return (
+                <SkillDisplay
+                  key={id}
+                  icon={icon}
+                  skill={skill}
+                  proficiency={proficiency}
+                />
+              );
+            })}
+          </div>
+          <div className="skill-category">
             <h2>Other</h2>
-            <div className="other-content">
-              {MySkill.otherSkills.map(({ id, icon, skill }) => {
-                return (
-                  <div key={id} className="skill-item">
-                    {icon}
-                    <p>{skill}</p>
-                  </div>
-                );
-              })}
-            </div>
+            {MySkill.otherSkills.map(({ id, icon, skill, proficiency }) => {
+              return (
+                <SkillDisplay
+                  key={id}
+                  icon={icon}
+                  skill={skill}
+                  proficiency={proficiency}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
