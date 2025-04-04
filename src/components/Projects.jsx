@@ -1,4 +1,5 @@
 import { projects } from "../assets/data";
+import "../styles/Projects.css";
 
 function ProjectCard({ title, tags, url }) {
   return (

@@ -1,0 +1,114 @@
+@import url("Global.css");
+
+#contact {
+  #contact-display {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    #send-form {
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      gap: 1rem;
+      width: 25rem;
+      .input-box {
+        display: flex;
+        flex-direction: row;
+        border: 2px solid var(--print-color);
+        border-radius: 18px;
+        padding: 0.75rem;
+        transition: border 300ms ease;
+        svg {
+          pointer-events: none;
+          margin-right: 0.5rem;
+          width: 1.5rem;
+          height: 1.5rem;
+          transition: fill 300ms ease;
+        }
+        input,
+        textarea {
+          border: transparent;
+          background: transparent;
+          color: var(--print-color);
+          font-size: 1rem;
+          outline: none;
+          width: 100%;
+        }
+        textarea {
+          resize: none;
+          width: 100%;
+        }
+      }
+      .input-box:focus-within {
+        border: 2px solid var(--accent-color);
+        svg {
+          fill: var(--accent-color);
+        }
+      }
+      button {
+        align-self: flex-end;
+        color: var(--text-color);
+      }
+      button:disabled {
+        background: var(--error-color);
+        cursor: not-allowed;
+      }
+      button:disabled:hover {
+        scale: 1;
+      }
+      button:enabled {
+        background: var(--print-color);
+        cursor: pointer;
+      }
+      button:enabled:hover {
+        background: var(--accent-color);
+        scale: 1.1;
+      }
+    }
+    #socials {
+      padding: 1rem;
+      width: fit-content;
+      h2 {
+        margin: 1rem 0.25rem 0.5rem;
+      }
+      #social-links {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        padding: 0.25rem;
+        width: fit-content;
+        button {
+          border-radius: 50%;
+          padding: 0.5rem;
+          svg {
+            width: 2rem;
+            height: 2rem;
+            transition: fill 300ms ease;
+          }
+        }
+        button:hover {
+          svg {
+            fill: var(--accent-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  #contact {
+    #contact-display {
+      align-items: center;
+      #send-form {
+        margin: 0 1rem;
+        width: max-content;
+      }
+      #socials {
+        h2 {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import url("Global.css");
+
+#footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 25rem;
+  p {
+    opacity: 0.5;
+    margin: 0%;
+  }
+  #footer-copy {
+    text-align: center;
+  }
+}
+
+@media (max-width: 880px) {
+  #footer {
+    flex-direction: column;
+    p {
+      text-align: center;
+    }
+  }
+}

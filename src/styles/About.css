@@ -1,0 +1,42 @@
+@import url("Global.css");
+
+#about {
+  #about-details {
+    max-width: 35rem;
+    padding: 2.5rem;
+    div {
+      h2 {
+        margin-top: 2.25rem;
+        margin-bottom: 0.25rem;
+      }
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0.25rem;
+      }
+      h4,
+      h5,
+      h6 {
+        font-weight: 300;
+      }
+    }
+    #experience,
+    #education {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      div {
+        margin-left: 1.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  #about {
+    #about-details {
+      margin: 0 1rem;
+    }
+  }
+}

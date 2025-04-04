@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { MoonIcon, SunIcon } from "../assets/Icons";
+import "../styles/Navigation.css";
 
 function ThemeSwitcher() {
   const [theme, setTheme] = useState(localStorage.getItem("theme"));

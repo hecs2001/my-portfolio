@@ -1,4 +1,5 @@
 import * as MySkill from "../assets/Skills";
+import "../styles/Skills.css";
 
 function SkillDisplay({ icon, skill, proficiency }) {
   const progressStyle = { "--width": proficiency * 10 + "%" };

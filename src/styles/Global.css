@@ -1,0 +1,158 @@
+@import url("Themes.css");
+
+:root {
+  backface-visibility: hidden;
+  font-synthesis: weight;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* THEME: DARK */
+[data-theme="dark"] {
+  #navigation-bar {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
+    button:has(svg):not(:hover) {
+      background: rgba(243, 242, 237, 0.1);
+    }
+  }
+  #skills {
+    .progress-element {
+      div {
+        background: rgba(243, 242, 237, 0.1);
+      }
+    }
+  }
+}
+
+/* THEME LIGHT */
+[data-theme="light"] {
+  #navigation-bar {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+    button:has(svg):not(:hover) {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+  #skills {
+    .progress-element {
+      .progress-bar {
+        background: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
+
+/* GLOBAL STYLES */
+html {
+  scroll-behavior: smooth;
+  h1,
+  h2,
+  span,
+  button,
+  input,
+  textarea {
+    font-family: var(--sans-font);
+  }
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    font-family: var(--mono-font);
+  }
+  .title-heading,
+  .project-tags,
+  #footer {
+    user-select: none;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    width: 58rem;
+    .title-heading {
+      display: flex;
+      align-self: flex-start;
+      justify-content: end;
+      color: var(--accent-color);
+      font-size: 2.5rem;
+      width: 12rem;
+      margin-right: 3rem;
+    }
+  }
+  button {
+    background: transparent;
+    border: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 38px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    padding: 0.5rem 1rem;
+  }
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }
+  body {
+    margin: 0%;
+    section {
+      display: flex;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      padding: 14rem 0 2rem 0;
+      z-index: 1;
+      #about-details,
+      .skill-category,
+      #project-display,
+      #send-form,
+      #socials {
+        background: var(--container-color);
+        border-radius: 28px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+    }
+  }
+}
+
+/* GLOBAL ANIMATION */
+html {
+  transition: background-color 500ms ease, box-shadow 500ms ease;
+  button {
+    transition: background 400ms ease, scale 200ms ease;
+  }
+}
+
+#cursor {
+  animation: blink 1000ms steps(5, start) infinite;
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* GLOBAL RESPONSIVENESS */
+@media (max-width: 900px) {
+  html {
+    .container {
+      flex-direction: column;
+      align-items: center;
+      .title-heading {
+        align-self: center;
+        justify-content: center;
+        margin-right: 0rem;
+      }
+    }
+    .container > div {
+      margin: 0 1rem;
+    }
+    body {
+      section:not(#home) {
+        padding: 5rem 0rem 1rem;
+      }
+    }
+  }
+}

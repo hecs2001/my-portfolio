@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-scroll";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import selfPortrait from "../assets/me.svg";
+import "../styles/Home.css";
 
 function AnimatedText() {
   const wordIndex = useMotionValue(0);
@@ -67,7 +68,7 @@ export default function Home() {
               );
             }}
           >
-            Download Resume
+            My Resume
           </button>
         </div>
       </div>

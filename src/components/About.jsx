@@ -1,4 +1,5 @@
 import { introduction, education, workExperience } from "../assets/data";
+import "../styles/About.css";
 
 export default function About() {
   function nameMonth(monthNumber) {

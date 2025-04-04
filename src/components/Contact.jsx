@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import * as Icon from "../assets/Icons";
+import { socialLinks } from "../assets/Socials";
+import "../styles/Contact.css";
 
 export default function Contact() {
   const [forms, setForms] = useState({ name: "", email: "", message: "" });
@@ -49,43 +51,59 @@ export default function Contact() {
     <section id="contact">
       <div className="container">
         <h1 className="title-heading">Contact</h1>
-        <form id="message-form" onSubmit={sendEmail} method="POST">
-          <div className="input-box">
-            <Icon.PersonIcon />
-            <input
-              type="text"
-              name="name"
-              onChange={handleChange}
-              value={forms.name}
-              placeholder="Name"
-            />
+        <div id="contact-display">
+          <form id="send-form" onSubmit={sendEmail} method="POST">
+            <div className="input-box">
+              <Icon.PersonIcon />
+              <input
+                type="text"
+                name="name"
+                onChange={handleChange}
+                value={forms.name}
+                placeholder="Name"
+              />
+            </div>
+            <div className="input-box">
+              <Icon.AtIcon />
+              <input
+                type="email"
+                name="email"
+                onChange={handleChange}
+                value={forms.email}
+                placeholder="Email"
+              />
+            </div>
+            <div className="input-box">
+              <textarea
+                rows={5}
+                name="message"
+                onChange={handleChange}
+                value={forms.message}
+                placeholder="Message"
+              />
+            </div>
+            <button type="submit" disabled={buttonState}>
+              Send Message
+            </button>
+          </form>
+          <div id="socials">
+            <h2>Socials</h2>
+            <div id="social-links">
+              {socialLinks.map(({ id, icon, social, link }) => {
+                return (
+                  <button
+                    key={id}
+                    onClick={() => {
+                      window.open(link, "_blank");
+                    }}
+                  >
+                    {icon}
+                  </button>
+                );
+              })}
+            </div>
           </div>
-          <div className="input-box">
-            <Icon.AtIcon />
-            <input
-              type="email"
-              name="email"
-              onChange={handleChange}
-              value={forms.email}
-              placeholder="Email"
-            />
-          </div>
-          <div className="input-box">
-            <textarea
-              rows={5}
-              name="message"
-              onChange={handleChange}
-              value={forms.message}
-              placeholder="Message"
-            />
-          </div>
-          <button
-            type="submit"
-            disabled={buttonState}
-          >
-            Send Message
-          </button>
-        </form>
+        </div>
       </div>
     </section>
   );
