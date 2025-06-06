@@ -91,13 +91,10 @@ export default function Contact() {
             <div id="social-links">
               {socialLinks.map(({ id, icon, social, link }) => {
                 return (
-                  <button
-                    key={id}
-                    onClick={() => {
-                      window.open(link, "_blank");
-                    }}
-                  >
-                    {icon}
+                  <button key={id}>
+                    <a href={link} target="_blank" rel="noopener noreferrer">
+                      {icon}
+                    </a>
                   </button>
                 );
               })}

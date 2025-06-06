@@ -6,11 +6,7 @@ import "../styles/Home.css";
 
 function AnimatedText() {
   const wordIndex = useMotionValue(0);
-  const words = [
-    "Front-end Developer",
-    "Web Developer",
-    "Programmer",
-  ];
+  const words = ["Full Stack Web Developer", "IT Technical Support", "Programmer", "Tech Enthusiast", "Gamer", "Casual Car Lover"];
   const baseWord = useTransform(wordIndex, (latest) => words[latest]);
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
@@ -51,14 +47,17 @@ export default function Home() {
     <section id="home">
       <img src={selfPortrait} alt="Picture of Hecs" />
       <div>
-        <h1>Hi, my name is <span>Hecs</span>.</h1>
-        <h2>A {AnimatedText()}<span id="cursor">|</span></h2>
+        <h1>
+          Hi, my name is <span>Hecs</span>.
+        </h1>
+        <h2>
+          A {AnimatedText()}
+          <span id="cursor">|</span>
+        </h2>
         <h4>from Cavite, Philippines</h4>
         <div>
           <button>
-            <Link to="contact">
-              Contact Me
-            </Link>
+            <Link to="contact">Contact Me</Link>
           </button>
           <button
             onClick={() => {

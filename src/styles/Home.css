@@ -39,7 +39,6 @@
       }
       button:hover {
         background: var(--accent-color);
-        scale: 1.1;
       }
     }
   }

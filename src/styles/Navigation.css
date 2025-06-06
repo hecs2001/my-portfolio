@@ -11,14 +11,13 @@
   left: 50%;
   transform: translateX(-50%);
   padding: 0.625rem;
-  gap: 0.625rem;
+  gap: 0.475rem;
   z-index: 2;
   button {
     color: var(--print-color);
     outline: none;
     opacity: 0.25;
     padding: 0.625rem;
-    transition: opacity 200ms ease, background 200ms ease, color 200ms ease;
   }
   button:not(:has(svg, .active)):hover {
     opacity: 1;
